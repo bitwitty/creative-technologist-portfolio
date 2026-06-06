@@ -7,13 +7,11 @@ export default function Home() {
       <section className="grid grid-cols-1 gap-8 py-20 md:grid-cols-12 md:py-32">
         <div className="md:col-span-7">
           <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-            {/* [PLACEHOLDER] Replace with your actual headline */}
-            I build systems that make creative work repeatable.
+            I build the systems between the brief and the shipped asset.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted">
-            {/* [PLACEHOLDER] Replace with your actual subhead */}
-            Creative technologist working across brand strategy, automation, and
-            AI. I design the systems behind the output.
+            Creative technologist. I design AI pipelines, automate production
+            workflows, and prototype tools that give creative teams leverage.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-8">
             <Link
@@ -49,35 +47,31 @@ export default function Home() {
         <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <h3 className="text-sm font-medium text-foreground">
-              {/* [PLACEHOLDER] Capability 1 title */}
-              Brand Systems
+              AI Pipeline Design
             </h3>
             <p className="mt-2 text-sm text-muted">
-              {/* [PLACEHOLDER] Capability 1 description */}
-              Voice frameworks, content pipelines, and repeatable creative
+              End-to-end systems that connect APIs, LLMs, and data sources into
+              reliable production workflows. Not one-off prompts. Repeatable
               infrastructure.
             </p>
           </div>
           <div>
             <h3 className="text-sm font-medium text-foreground">
-              {/* [PLACEHOLDER] Capability 2 title */}
-              AI Workflows
+              Rapid Prototyping
             </h3>
             <p className="mt-2 text-sm text-muted">
-              {/* [PLACEHOLDER] Capability 2 description */}
-              Prompt engineering, model integration, and tooling that turns
-              manual processes into systems.
+              Functional tools built fast. CRMs, dashboards, creative toolkits,
+              trip planners. Full-stack, shipped, and running.
             </p>
           </div>
           <div>
             <h3 className="text-sm font-medium text-foreground">
-              {/* [PLACEHOLDER] Capability 3 title */}
-              Creative Operations
+              Creative Automation
             </h3>
             <p className="mt-2 text-sm text-muted">
-              {/* [PLACEHOLDER] Capability 3 description */}
-              Project architecture, process design, and the connective tissue
-              between strategy and execution.
+              AI-assisted content generation with human-in-the-loop quality
+              control. Brand voice systems, scoring models, editorial review
+              layers.
             </p>
           </div>
         </div>

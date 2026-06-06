@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "[PLACEHOLDER] About Kat Moffat, creative technologist.",
+  description:
+    "About Katherine Moffat. Creative technologist building AI systems for creative teams.",
 };
 
 export default function AboutPage() {
@@ -15,20 +16,27 @@ export default function AboutPage() {
               About
             </p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Kat Moffat
+              Katherine Moffat
             </h1>
             <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted">
               <p>
-                {/* [PLACEHOLDER] Bio paragraph 1: background, what you do, how you got here */}
-                [PLACEHOLDER] First paragraph of your bio. Background, disciplines, what drives your work.
+                I build AI-native systems for marketing, brand, and creative
+                teams. Pipelines, not prompts. The kind of infrastructure that
+                means one person can do what used to take a department, without
+                the work looking like it was done by a machine.
               </p>
               <p>
-                {/* [PLACEHOLDER] Bio paragraph 2: approach, philosophy */}
-                [PLACEHOLDER] Second paragraph. Your approach, how you think about the intersection of strategy and systems.
+                I got here through the long way round. Marketing, brand
+                strategy, operations, project management, creative direction,
+                consulting. I've sat in enough of those seats to know that the
+                tool is only as good as the workflow it fits into. So I build
+                both.
               </p>
               <p>
-                {/* [PLACEHOLDER] Bio paragraph 3: current focus */}
-                [PLACEHOLDER] Third paragraph. What you are working on now, what you are looking for.
+                I'm also a photographer and editor. That's not a footnote. It's
+                why I build human-in-the-loop review into everything, and why I
+                don't ship AI-generated creative without someone making the
+                final call.
               </p>
             </div>
             <div className="mt-10">
@@ -37,14 +45,14 @@ export default function AboutPage() {
                 download
                 className="text-sm font-medium text-accent transition-colors hover:text-foreground"
               >
+                {/* [PLACEHOLDER] Replace href with actual CV PDF path */}
                 Download CV &darr;
               </a>
-              {/* [PLACEHOLDER] Replace href with actual CV PDF path */}
             </div>
           </div>
           <div className="md:col-span-5">
             {/* [PLACEHOLDER] Professional photo */}
-            <div className="aspect-[4/5] w-full rounded bg-surface" />
+            <div className="aspect-[4/5] w-full bg-surface" />
           </div>
         </div>
       </section>

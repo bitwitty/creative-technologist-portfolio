@@ -19,7 +19,7 @@ export default function Nav() {
           href="/"
           className="text-sm font-medium tracking-tight text-foreground"
         >
-          Kat Moffat
+          Katherine Moffat
         </Link>
         <div className="flex items-center gap-6 md:gap-8">
           {links.map(({ href, label }) => (

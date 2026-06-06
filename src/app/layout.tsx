@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kat Moffat. Creative Technologist.",
-    template: "%s | Kat Moffat",
+    default: "Katherine Moffat. Creative Technologist.",
+    template: "%s | Katherine Moffat",
   },
   description:
-    "[PLACEHOLDER] Portfolio of Kat Moffat, creative technologist. Systems, strategy, and craft.",
+    "Katherine Moffat. Creative technologist building AI pipelines, production workflows, and tools for creative teams.",
 };
 
 export default function RootLayout({

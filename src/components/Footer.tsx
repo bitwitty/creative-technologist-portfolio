@@ -5,9 +5,8 @@ export default function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-8">
         <div>
-          <p className="text-sm text-foreground">Kat Moffat</p>
+          <p className="text-sm text-foreground">Katherine Moffat</p>
           <p className="mt-1 text-xs text-muted">
-            {/* [PLACEHOLDER] Tagline or descriptor */}
             Creative Technologist
           </p>
         </div>
