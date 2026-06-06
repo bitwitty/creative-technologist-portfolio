@@ -21,9 +21,6 @@ Everything marked [PLACEHOLDER] in the codebase. Replace before launch.
 - [ ] Professional photo (replace the gray placeholder div)
 - [ ] CV PDF file (place in /public, update the href)
 
-## Generator (src/lib/prompts.ts)
-- [ ] Two real Dry Trip posts for system prompt examples
-
 ## Site-wide
 - [ ] Meta description in src/app/layout.tsx
 - [ ] Meta descriptions for each page

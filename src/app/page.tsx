@@ -29,7 +29,7 @@ export default function Home() {
               href="/generator"
               className="group text-sm font-medium text-accent"
             >
-              Try the generator{" "}
+              Try the toolkit{" "}
               <span className="inline-block transition-transform group-hover:translate-x-1">
                 &rarr;
               </span>

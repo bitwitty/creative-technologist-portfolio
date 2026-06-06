@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GeneratorClient from "@/components/GeneratorClient";
 
 export const metadata: Metadata = {
-  title: "Brand Voice Generator",
+  title: "Creative Toolkit",
   description:
-    "Generate venue descriptions, SEO meta, and social captions in Dry Trip's voice.",
+    "AI-powered creative tools: copy rewriting, brief-to-copy generation, and image prompt engineering.",
 };
 
 export default function GeneratorPage() {
@@ -15,11 +15,12 @@ export default function GeneratorPage() {
           Live Demo
         </p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-          Brand Voice Generator
+          Creative Toolkit
         </h1>
         <p className="mt-4 max-w-lg text-sm text-muted">
-          Generate venue descriptions, SEO meta, and social captions in Dry
-          Trip's voice. Built on Anthropic's API with a tuned system prompt.
+          Three tools, one API route, three system prompts. Rewrite copy in any
+          voice, generate first drafts from briefs, or build production-ready
+          image prompts.
         </p>
       </section>
       <section className="pb-24">

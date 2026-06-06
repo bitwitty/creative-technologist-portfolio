@@ -16,7 +16,7 @@ export default function Footer() {
             Work
           </Link>
           <Link href="/generator" className="transition-colors hover:text-foreground">
-            Generator
+            Toolkit
           </Link>
           <Link href="/about" className="transition-colors hover:text-foreground">
             About

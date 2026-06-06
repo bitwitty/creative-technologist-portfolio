@@ -1,10 +1,17 @@
 "use client";
 
-import type { GeneratorOutput as OutputType } from "@/types/generator";
+import type {
+  ToolkitMode,
+  ToolkitOutput,
+  RewriteOutput,
+  BriefOutput,
+  ImagePromptOutput,
+} from "@/types/generator";
 import CopyButton from "./CopyButton";
 
 interface GeneratorOutputProps {
-  data: OutputType | null;
+  mode: ToolkitMode;
+  data: ToolkitOutput | null;
   isLoading: boolean;
   error: string | null;
 }
@@ -19,16 +26,16 @@ function OutputBlock({
   detail?: string;
 }) {
   return (
-    <div className="border-t border-border pt-5">
+    <div className="border-l-2 border-accent pl-5 py-1">
       <div className="flex items-center justify-between">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted">
-          {label}
-        </p>
+        <p className="font-mono text-xs text-muted">{label}</p>
         <CopyButton text={content} />
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-foreground">{content}</p>
+      <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-foreground">
+        {content}
+      </p>
       {detail && (
-        <p className="mt-1 font-mono text-xs text-muted">{detail}</p>
+        <p className="mt-1 font-mono text-xs text-muted/60">{detail}</p>
       )}
     </div>
   );
@@ -38,11 +45,11 @@ function Skeleton() {
   return (
     <div className="space-y-6">
       {[1, 2, 3].map((i) => (
-        <div key={i} className="border-t border-border pt-5">
-          <div className="h-3 w-24 animate-pulse rounded bg-surface" />
+        <div key={i} className="border-l-2 border-border pl-5 py-1">
+          <div className="h-3 w-20 animate-pulse bg-surface" />
           <div className="mt-3 space-y-2">
-            <div className="h-3 w-full animate-pulse rounded bg-surface" />
-            <div className="h-3 w-3/4 animate-pulse rounded bg-surface" />
+            <div className="h-3 w-full animate-pulse bg-surface" />
+            <div className="h-3 w-3/4 animate-pulse bg-surface" />
           </div>
         </div>
       ))}
@@ -50,7 +57,42 @@ function Skeleton() {
   );
 }
 
+function RewriteResult({ data }: { data: RewriteOutput }) {
+  return (
+    <div className="space-y-6">
+      {data.rewrites.map((r, i) => (
+        <OutputBlock key={i} label={r.voice} content={r.text} />
+      ))}
+    </div>
+  );
+}
+
+function BriefResult({ data }: { data: BriefOutput }) {
+  return (
+    <div className="space-y-6">
+      <OutputBlock label="Headline" content={data.headline} />
+      <OutputBlock
+        label="Body"
+        content={data.body}
+        detail={`${data.body.split(/\s+/).length} words`}
+      />
+      <OutputBlock label="CTA" content={data.cta} />
+    </div>
+  );
+}
+
+function ImagePromptResult({ data }: { data: ImagePromptOutput }) {
+  return (
+    <div className="space-y-6">
+      <OutputBlock label="Prompt" content={data.prompt} />
+      <OutputBlock label="Negative prompt" content={data.negativePrompt} />
+      <OutputBlock label="Parameters" content={data.parameters} />
+    </div>
+  );
+}
+
 export default function GeneratorOutput({
+  mode,
   data,
   isLoading,
   error,
@@ -59,7 +101,7 @@ export default function GeneratorOutput({
 
   if (error) {
     return (
-      <div className="border border-accent/20 bg-accent/5 px-4 py-3">
+      <div className="border-l-2 border-accent/40 bg-accent/5 px-4 py-3">
         <p className="text-sm text-accent">{error}</p>
       </div>
     );
@@ -68,24 +110,12 @@ export default function GeneratorOutput({
   if (!data) {
     return (
       <p className="text-sm text-muted">
-        Fill in the form and hit Generate to see results here.
+        Results will appear here.
       </p>
     );
   }
 
-  return (
-    <div className="space-y-6">
-      <OutputBlock
-        label="60-word Description"
-        content={data.description}
-        detail={`${data.description.split(/\s+/).length} words`}
-      />
-      <OutputBlock
-        label="SEO Meta"
-        content={data.seoMeta}
-        detail={`${data.seoMeta.length} characters`}
-      />
-      <OutputBlock label="Social Caption" content={data.socialCaption} />
-    </div>
-  );
+  if (mode === "rewrite") return <RewriteResult data={data as RewriteOutput} />;
+  if (mode === "brief") return <BriefResult data={data as BriefOutput} />;
+  return <ImagePromptResult data={data as ImagePromptOutput} />;
 }
