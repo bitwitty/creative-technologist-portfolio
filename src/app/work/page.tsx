@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Ticker from "@/components/Ticker";
+import Marquee from "@/components/Marquee";
 
 const CASES = [
   {
-    no: "01",
+    no: "Work 01",
     name: "Dry Trip",
     sub: "AI-Curated Travel Directory",
     problem:
@@ -33,7 +33,7 @@ const CASES = [
     ],
   },
   {
-    no: "02",
+    no: "Work 02",
     name: "CMO Agent",
     sub: "Multi-Brand Marketing Automation",
     problem:
@@ -59,7 +59,7 @@ const CASES = [
     ],
   },
   {
-    no: "03",
+    no: "Work 03",
     name: "18th Grain",
     sub: "Custom CRM",
     problem:
@@ -114,62 +114,56 @@ function CaseItem({
 }) {
   return (
     <div className={`case${open ? " is-open" : ""}`}>
-      <button
-        className="case__row"
-        aria-expanded={open}
-        onClick={onToggle}
-      >
+      <button className="case__row" aria-expanded={open} onClick={onToggle}>
         <span className="case__no">{c.no}</span>
         <span className="case__name">
-          {c.name}.{" "}
-          <span className="thin" style={{ color: "var(--muted)" }}>
-            {c.sub}
-          </span>
+          {c.name}
+          <span className="case__sub">{c.sub}</span>
         </span>
-        <span className="case__toggle">
-          {open ? "Close" : "View"}
-          <span className="case__plus" aria-hidden="true"></span>
-        </span>
+        <span className="case__plus" aria-hidden="true"></span>
       </button>
       <div className="case__panel">
         <div className="case__inner">
-          <div className="case__fields">
-            <div>
-              <p className="field__label">Problem</p>
-              <p className="field__text dim">{c.problem}</p>
+          <span className="case__spacer" aria-hidden="true"></span>
+          <div className="case__body">
+            <div className="case__fields">
+              <div>
+                <p className="field__label">Problem</p>
+                <p className="field__text dim">{c.problem}</p>
+              </div>
+              <div>
+                <p className="field__label">System</p>
+                <p className="field__text">{c.system}</p>
+              </div>
+              <div>
+                <p className="field__label">Output</p>
+                <p className="field__text dim">{c.output}</p>
+              </div>
+              <div>
+                <p className="field__label">Impact</p>
+                <p className="field__text">{c.impact}</p>
+              </div>
             </div>
-            <div>
-              <p className="field__label">System</p>
-              <p className="field__text">{c.system}</p>
-            </div>
-            <div>
-              <p className="field__label">Output</p>
-              <p className="field__text dim">{c.output}</p>
-            </div>
-            <div>
-              <p className="field__label">Impact</p>
-              <p className="field__text">{c.impact}</p>
-            </div>
-          </div>
-          <div className="case__aside">
-            <p className="field__label">Stack</p>
-            <div className="stack">
-              {c.stack.map((t) => (
-                <span className="chip" key={t}>
-                  {t}
-                </span>
-              ))}
-            </div>
-            <div className="metrics">
-              {c.metrics.map((m, i) => (
-                <div key={i}>
-                  <p className="metric__num">
-                    {m.num}
-                    {m.u ? <span className="u"> {m.u}</span> : null}
-                  </p>
-                  <p className="metric__label">{m.label}</p>
-                </div>
-              ))}
+            <div className="case__aside">
+              <p className="field__label">Stack</p>
+              <div className="stack">
+                {c.stack.map((t) => (
+                  <span className="chip" key={t}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="metrics">
+                {c.metrics.map((m, i) => (
+                  <div key={i}>
+                    <p className="metric__num">
+                      {m.num}
+                      {m.u ? <span className="u"> {m.u}</span> : null}
+                    </p>
+                    <p className="metric__label">{m.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -179,41 +173,39 @@ function CaseItem({
 }
 
 export default function WorkPage() {
-  const [open, setOpen] = useState<string | null>("01");
+  const [open, setOpen] = useState<string | null>("Work 01");
 
   return (
     <>
-      <div className="wrap work-head" id="main">
-        <p className="eyebrow reveal">
-          <span className="mark">{"\u2726"}</span> Selected Work / 03 systems
-        </p>
-        <h1
-          className="huge reveal"
-          data-d="1"
-          style={{ marginTop: "1.2rem" }}
-        >
-          Systems I<br />
-          have built<span className="dot">.</span>
-        </h1>
-      </div>
-      <div className="wrap">
+      <div className="wrap section" id="main">
+        <div className="sec-kicker reveal">
+          <span className="label label--muted">
+            <span className="star">{"\u2726"}</span>Selected Work / 03 systems
+          </span>
+          <span className="bar" aria-hidden="true"></span>
+        </div>
+        <div className="sec-head reveal" data-d="1">
+          <h2 className="display">Systems I</h2>
+          <h2 className="display outline">
+            have built
+            <span className="dot" style={{ WebkitTextStroke: 0 }}>
+              .
+            </span>
+          </h2>
+        </div>
         <div className="cases">
           {CASES.map((c) => (
             <CaseItem
               key={c.no}
               c={c}
               open={open === c.no}
-              onToggle={() =>
-                setOpen(open === c.no ? null : c.no)
-              }
+              onToggle={() => setOpen(open === c.no ? null : c.no)}
             />
           ))}
         </div>
-        {/* Add more case studies here */}
       </div>
-      <div style={{ height: "clamp(2rem,6vw,5rem)" }}></div>
-      <Ticker
-        dark
+
+      <Marquee
         reverse
         items={[
           "Next.js",

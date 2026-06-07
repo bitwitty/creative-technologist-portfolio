@@ -32,15 +32,18 @@ export default function Nav() {
           <span className="mark" aria-hidden="true"></span>
           <span className="name">Katherine Moffat</span>
         </Link>
+        {/* [PLACEHOLDER] Replace href with actual CV PDF path */}
+        <a className="nav__cv" href="/placeholder-cv.pdf" download>
+          Download CV <span className="ar" aria-hidden="true">{"\u2193"}</span>
+        </a>
         <div className="nav__links">
-          {NAV_LINKS.map((l, i) => (
+          {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               className={`nav__link${pathname === l.href ? " is-active" : ""}`}
               aria-current={pathname === l.href ? "page" : undefined}
             >
-              <span className="n">{String(i + 1).padStart(2, "0")}</span>
               {l.label}
             </Link>
           ))}

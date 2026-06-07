@@ -1,64 +1,83 @@
 import Link from "next/link";
-import Ticker from "@/components/Ticker";
+import Marquee from "@/components/Marquee";
+import RotatingBadge from "@/components/RotatingBadge";
 
 export default function Home() {
   return (
     <>
-      <div className="wrap hero" id="main">
-        <div className="hero__top">
-          <p className="eyebrow reveal">
-            <span className="mark">{"\u2726"}</span> Creative Technologist
-          </p>
-          <div className="hero__meta reveal" data-d="1">
-            <span className="live">Available 2026</span>
+      {/* ---------- HERO ---------- */}
+      <header className="wrap hero" id="main">
+        <div className="hero__top reveal">
+          <span className="label">
+            <span className="star">{"\u2726"}</span>Creative Technologist
+          </span>
+          <div className="hero__meta label label--muted">
+            <span className="live" style={{ color: "var(--ink)" }}>
+              Available 2026
+            </span>
             <span>Independent practice</span>
             <span>AI / Automation / Tooling</span>
           </div>
         </div>
 
-        <div className="hero__ghost" aria-hidden="true">
-          KM
-        </div>
-
         <div className="hero__display reveal" data-d="1">
-          <h1 className="huge">
-            <span className="line">
-              <span className="thin">I build the</span> systems
+          <div className="hero__line">
+            <span className="hero__tag">
+              AI<span className="slash">/</span>Systems
             </span>
-            <span className="line">
-              between the <span className="thin">brief</span>
-            </span>
-            <span className="line">
-              and the shipped asset<span className="dot">.</span>
-            </span>
-          </h1>
-        </div>
-
-        <div className="hero__lower">
-          <p className="hero__sub reveal" data-d="2">
-            <span className="lead">Five shipped products in three months.</span> A
-            decade of creative production setting the quality bar.
-          </p>
-          <div className="hero__ctas reveal" data-d="3">
-            <Link className="btn-pill btn-pill--accent" href="/work">
-              See the work{" "}
-              <span className="arrow" aria-hidden="true">
-                {"\u2197"}
+            <h1 className="hero__huge">Creative</h1>
+          </div>
+          <div className="hero__line">
+            <span className="hero__huge outline">
+              Technologist
+              <span className="dot" style={{ WebkitTextStroke: 0 }}>
+                .
               </span>
-            </Link>
-            <Link className="btn-pill btn-pill--ghost" href="/generator">
-              Try the toolkit{" "}
-              <span className="arrow" aria-hidden="true">
-                {"\u2197"}
-              </span>
-            </Link>
+            </span>
           </div>
         </div>
-      </div>
 
-      <Ticker
+        <div className="hero__intro">
+          <div
+            className="hero__portrait reveal"
+            data-d="1"
+            role="img"
+            aria-label="Professional photo placeholder"
+          >
+            {/* [PLACEHOLDER] Replace with actual portrait image */}
+            <span className="ph-tag">portrait / drop image</span>
+            <div className="hero__badge">
+              <RotatingBadge text="Currently open for offers" />
+            </div>
+          </div>
+          <div className="hero__copy reveal" data-d="2">
+            <p>
+              <span className="lead">
+                Five shipped products in three months.
+              </span>{" "}
+              A decade of creative production setting the quality bar.
+            </p>
+            <div className="hero__ctas">
+              <Link className="btn-pill btn-pill--solid" href="/work">
+                See the work{" "}
+                <span className="arrow" aria-hidden="true">
+                  {"\u2197"}
+                </span>
+              </Link>
+              <Link className="btn-pill btn-pill--ghost" href="/generator">
+                Try the toolkit{" "}
+                <span className="arrow" aria-hidden="true">
+                  {"\u2197"}
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <Marquee
         items={[
-          "Creative Technologist",
+          "Selected Work",
           "AI Pipelines",
           "Creative Automation",
           "Rapid Prototyping",
@@ -66,36 +85,89 @@ export default function Home() {
         ]}
       />
 
+      {/* ---------- CAPABILITIES ---------- */}
       <section className="wrap section">
-        <div className="section__label reveal">
-          <p className="eyebrow">What I do</p>
+        <div className="sec-kicker reveal">
+          <span className="label label--muted">
+            <span className="star">{"\u2726"}</span>What I do
+          </span>
           <span className="bar" aria-hidden="true"></span>
-          <p className="eyebrow">Three disciplines</p>
         </div>
-        <div className="caps">
-          {[
-            {
-              no: "01",
-              title: "Creative Production",
-              desc: "9 years producing editorial, photography, and content for brands including Expedia, Four Seasons, Fairmont, and publications including Vogue Greece, Vogue Portugal, and Glamour Hungary.",
-            },
-            {
-              no: "02",
-              title: "Shipped Products",
-              desc: "5 products shipped in 3 months. 73 venues scored automatically. 3 brands managed by one agent weekly. A CRM used daily. A live demo on this site.",
-            },
-            {
-              no: "03",
-              title: "AI Image Generation",
-              desc: "AI image generation alongside traditional film photography. See the work at @houseofatelios.",
-            },
-          ].map((c) => (
-            <div className="cap reveal" key={c.no}>
-              <span className="cap__no">{c.no}</span>
-              <h3 className="cap__title">{c.title}</h3>
-              <p className="cap__desc">{c.desc}</p>
+        <div className="sec-head reveal" data-d="1">
+          <h2 className="display">Systems I</h2>
+          <h2 className="display outline">
+            have built
+            <span className="dot" style={{ WebkitTextStroke: 0 }}>
+              .
+            </span>
+          </h2>
+        </div>
+
+        <div className="help__cols reveal" data-d="2">
+          <div className="collist">
+            <div className="collist__head">
+              <span className="label">Capabilities</span>
+              <span className="ix">What I do</span>
             </div>
-          ))}
+            <ul>
+              <li>
+                <span>AI Pipeline Design</span>
+                <span className="meta">01</span>
+              </li>
+              <li>
+                <span>Rapid Prototyping</span>
+                <span className="meta">02</span>
+              </li>
+              <li>
+                <span>Creative Automation</span>
+                <span className="meta">03</span>
+              </li>
+              <li>
+                <span>Brand Voice Systems</span>
+                <span className="meta">04</span>
+              </li>
+              <li>
+                <span>Human-in-the-Loop Review</span>
+                <span className="meta">05</span>
+              </li>
+              <li>
+                <span>Photography / Editing</span>
+                <span className="meta">06</span>
+              </li>
+            </ul>
+          </div>
+          <div className="collist">
+            <div className="collist__head">
+              <span className="label">Toolkit</span>
+              <span className="ix">Stack</span>
+            </div>
+            <ul>
+              <li>
+                <span>Next.js / TypeScript</span>
+                <span className="meta">Build</span>
+              </li>
+              <li>
+                <span>Claude API / Vercel AI SDK</span>
+                <span className="meta">AI</span>
+              </li>
+              <li>
+                <span>Python / GitHub Actions</span>
+                <span className="meta">Agents</span>
+              </li>
+              <li>
+                <span>Postgres / Supabase / Neon</span>
+                <span className="meta">Data</span>
+              </li>
+              <li>
+                <span>PostHog / GA4 / Search Console</span>
+                <span className="meta">Signal</span>
+              </li>
+              <li>
+                <span>Figma / Lightroom</span>
+                <span className="meta">Craft</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </>

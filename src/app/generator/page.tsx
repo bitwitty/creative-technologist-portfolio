@@ -10,20 +10,23 @@ export const metadata: Metadata = {
 export default function GeneratorPage() {
   return (
     <>
-      <div className="wrap gen-head" id="main">
-        <p className="eyebrow reveal">
-          <span className="mark">{"\u2726"}</span> Live Demo / Three tools, one
-          route
-        </p>
-        <h1
-          className="huge reveal"
-          data-d="1"
-          style={{ marginTop: "1rem" }}
-        >
-          Creative
-          <br />
-          Toolkit<span className="dot">.</span>
-        </h1>
+      <div className="wrap tk-head" id="main">
+        <div className="sec-kicker reveal">
+          <span className="label label--muted">
+            <span className="star">{"\u2726"}</span>Live Demo / Three tools, one
+            route
+          </span>
+          <span className="bar" aria-hidden="true"></span>
+        </div>
+        <div className="sec-head reveal" data-d="1">
+          <h1 className="display">Creative</h1>
+          <h1 className="display outline">
+            Toolkit
+            <span className="dot" style={{ WebkitTextStroke: 0 }}>
+              .
+            </span>
+          </h1>
+        </div>
         <p className="sub reveal" data-d="2">
           Three tools, one API route, three system prompts. Rewrite copy in any
           voice, generate first drafts from briefs, or build production-ready
