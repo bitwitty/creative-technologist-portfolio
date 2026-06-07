@@ -14,7 +14,7 @@ export default function Footer() {
           <span className="mark">{"\u2726"}</span> Available for projects
         </p>
         <h2 className="huge" style={{ marginTop: "1.2rem" }}>
-          Let us talk<span className="dot">.</span>
+          Let&apos;s chat<span className="dot">.</span>
         </h2>
         <div className="footer__row">
           {/* [PLACEHOLDER] Contact email for footer (src/components/Footer.tsx) */}
