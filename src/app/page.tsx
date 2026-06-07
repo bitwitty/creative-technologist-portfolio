@@ -36,9 +36,9 @@ export default function Home() {
 
         <div className="hero__lower">
           <p className="hero__sub reveal" data-d="2">
-            <span className="lead">Creative technologist.</span> I design AI
-            pipelines, automate production workflows, and prototype tools that
-            give creative teams leverage.
+            <span className="lead">Creative technologist.</span> I build AI
+            pipelines, automate the repetitive parts of creative work, and
+            ship tools that actually get used.
           </p>
           <div className="hero__ctas reveal" data-d="3">
             <Link className="btn-pill btn-pill--accent" href="/work">
@@ -78,17 +78,17 @@ export default function Home() {
             {
               no: "01",
               title: "AI Pipeline Design",
-              desc: "End-to-end systems that connect APIs, LLMs, and data sources into reliable production workflows. Not one-off prompts. Repeatable infrastructure.",
+              desc: "I wire up APIs, LLMs, and data sources into workflows that run on their own. The goal is always the same: do it once, then let the system handle it.",
             },
             {
               no: "02",
               title: "Rapid Prototyping",
-              desc: "Functional tools built fast. CRMs, dashboards, creative toolkits, trip planners. Full-stack, shipped, and running.",
+              desc: "I build working tools quickly. CRMs, dashboards, creative toolkits. Not mockups or decks. Real software that people use every day.",
             },
             {
               no: "03",
               title: "Creative Automation",
-              desc: "AI-assisted content generation with human-in-the-loop quality control. Brand voice systems, scoring models, editorial review layers.",
+              desc: "AI that generates content with a human checking the output before it ships. Voice systems, scoring, editorial review. The machine drafts, the person decides.",
             },
           ].map((c) => (
             <div className="cap reveal" key={c.no}>

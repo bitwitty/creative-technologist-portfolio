@@ -51,23 +51,22 @@ export default function AboutPage() {
         <div className="about__body reveal" data-d="2">
           <div className="about__prose">
             <p>
-              <span className="lead-in">I build AI-native systems</span> for
-              marketing, brand, and creative teams. Pipelines, not prompts. The
-              kind of infrastructure that means one person can do what used to
-              take a department, without the work looking like it was done by a
-              machine.
+              <span className="lead-in">I build systems</span> that let small
+              teams produce work that used to require a department. AI
+              pipelines, automation, tooling. The kind of thing where you set up
+              the workflow once and it just runs.
             </p>
             <p>
-              I got here through the long way round. Marketing, brand strategy,
-              operations, project management, creative direction, consulting.
-              I've sat in enough of those seats to know that the tool is only as
-              good as the workflow it fits into. So I build both.
+              I got here sideways. Marketing, brand strategy, ops, project
+              management, creative direction, consulting. I've done enough of
+              each to know that building the tool is only half the job. The
+              other half is making sure it actually fits how people work.
             </p>
             <p>
-              I'm also a photographer and editor. That's not a footnote. It's
-              why I build human-in-the-loop review into everything, and why I
-              don't ship AI-generated creative without someone making the final
-              call.
+              I'm also a photographer and editor. That matters because it
+              means I actually care whether the output is good, not just
+              whether the system works. Everything I build has a human
+              review step. I don't trust fully automated creative.
             </p>
           </div>
           <div className="about__cv">
