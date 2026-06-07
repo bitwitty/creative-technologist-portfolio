@@ -31,12 +31,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body>
+        <a href="#main" className="skip-link">Skip to content</a>
+        <div className="app">
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -1,109 +1,104 @@
 import Link from "next/link";
+import Ticker from "@/components/Ticker";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl px-6 md:px-10">
-      {/* Hero */}
-      <section className="grid grid-cols-1 gap-8 py-24 md:grid-cols-12 md:py-40">
-        <div className="md:col-span-8" style={{ animation: "fade-in-up 0.7s ease-out both" }}>
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.03em] md:text-7xl lg:text-[5.5rem]">
-            I build the systems between the brief and the shipped asset<span className="text-accent">.</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted" style={{ animation: "fade-in-up 0.7s ease-out both", animationDelay: "120ms" }}>
-            Creative technologist. I design AI pipelines, automate production
-            workflows, and prototype tools that give creative teams leverage.
+    <>
+      <div className="wrap hero" id="main">
+        <div className="hero__top">
+          <p className="eyebrow reveal">
+            <span className="mark">{"\u2726"}</span> Creative Technologist
           </p>
-          <div className="mt-12 flex gap-8" style={{ animation: "fade-in-up 0.7s ease-out both", animationDelay: "240ms" }}>
-            <Link
-              href="/work"
-              className="group text-sm font-medium text-foreground transition-colors hover:text-accent"
-            >
-              See the work{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1">
-                &rarr;
-              </span>
-            </Link>
-            <Link
-              href="/generator"
-              className="group text-sm font-medium text-accent"
-            >
-              Try the toolkit{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1">
-                &rarr;
-              </span>
-            </Link>
+          <div className="hero__meta reveal" data-d="1">
+            <span className="live">Available 2026</span>
+            <span>Independent practice</span>
+            <span>AI / Automation / Tooling</span>
           </div>
         </div>
-        <div className="hidden md:col-span-4 md:flex md:flex-col md:items-end md:justify-end" style={{ animation: "fade-in-up 0.7s ease-out both", animationDelay: "360ms" }}>
-          <div className="font-mono text-xs leading-loose text-muted text-right">
-            <p>Creative Technologist</p>
-            <p>Available for projects</p>
-          </div>
-        </div>
-      </section>
 
-      {/* Ticker */}
-      <div className="overflow-hidden border-y border-border py-3">
-        <div className="flex whitespace-nowrap" style={{ animation: "ticker-scroll 30s linear infinite" }}>
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="flex items-center gap-6 pr-6 font-mono text-xs text-muted">
-              <span>AI Pipeline Design</span>
-              <span className="text-accent">&bull;</span>
-              <span>Rapid Prototyping</span>
-              <span className="text-accent">&bull;</span>
-              <span>Creative Automation</span>
-              <span className="text-accent">&bull;</span>
-              <span>Prompt Engineering</span>
-              <span className="text-accent">&bull;</span>
-              <span>Full-Stack Development</span>
-              <span className="text-accent">&bull;</span>
-              <span>Brand Systems</span>
-              <span className="text-accent">&bull;</span>
+        <div className="hero__ghost" aria-hidden="true">
+          KM
+        </div>
+
+        <div className="hero__display reveal" data-d="1">
+          <h1 className="huge">
+            <span className="line">
+              <span className="thin">I build the</span> systems
             </span>
-          ))}
+            <span className="line">
+              between the <span className="thin">brief</span>
+            </span>
+            <span className="line">
+              and the shipped asset<span className="dot">.</span>
+            </span>
+          </h1>
+        </div>
+
+        <div className="hero__lower">
+          <p className="hero__sub reveal" data-d="2">
+            <span className="lead">Creative technologist.</span> I design AI
+            pipelines, automate production workflows, and prototype tools that
+            give creative teams leverage.
+          </p>
+          <div className="hero__ctas reveal" data-d="3">
+            <Link className="btn-pill btn-pill--accent" href="/work">
+              See the work{" "}
+              <span className="arrow" aria-hidden="true">
+                {"\u2197"}
+              </span>
+            </Link>
+            <Link className="btn-pill btn-pill--ghost" href="/generator">
+              Try the toolkit{" "}
+              <span className="arrow" aria-hidden="true">
+                {"\u2197"}
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Capabilities */}
-      <section className="py-20 md:py-32">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          What I do
-        </p>
-        <div className="mt-12 grid grid-cols-1 gap-0 md:grid-cols-12">
-          <div className="border-t border-border py-8 md:col-span-5 md:pr-10">
-            <span className="font-mono text-xs text-accent">01</span>
-            <h3 className="mt-3 text-lg font-medium text-foreground">
-              AI Pipeline Design
-            </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted">
-              End-to-end systems that connect APIs, LLMs, and data sources into
-              reliable production workflows. Not one-off prompts. Repeatable
-              infrastructure.
-            </p>
-          </div>
-          <div className="border-t border-border py-8 md:col-span-4 md:pr-10">
-            <span className="font-mono text-xs text-accent">02</span>
-            <h3 className="mt-3 text-lg font-medium text-foreground">
-              Rapid Prototyping
-            </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted">
-              Functional tools built fast. CRMs, dashboards, creative toolkits,
-              trip planners. Full-stack, shipped, and running.
-            </p>
-          </div>
-          <div className="border-t border-border py-8 md:col-span-3">
-            <span className="font-mono text-xs text-accent">03</span>
-            <h3 className="mt-3 text-lg font-medium text-foreground">
-              Creative Automation
-            </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted">
-              AI-assisted content generation with human-in-the-loop quality
-              control. Brand voice systems, scoring models, editorial review
-              layers.
-            </p>
-          </div>
+      <Ticker
+        items={[
+          "Creative Technologist",
+          "AI Pipelines",
+          "Creative Automation",
+          "Rapid Prototyping",
+          "Human in the Loop",
+        ]}
+      />
+
+      <section className="wrap section">
+        <div className="section__label reveal">
+          <p className="eyebrow">What I do</p>
+          <span className="bar" aria-hidden="true"></span>
+          <p className="eyebrow">Three disciplines</p>
+        </div>
+        <div className="caps">
+          {[
+            {
+              no: "01",
+              title: "AI Pipeline Design",
+              desc: "End-to-end systems that connect APIs, LLMs, and data sources into reliable production workflows. Not one-off prompts. Repeatable infrastructure.",
+            },
+            {
+              no: "02",
+              title: "Rapid Prototyping",
+              desc: "Functional tools built fast. CRMs, dashboards, creative toolkits, trip planners. Full-stack, shipped, and running.",
+            },
+            {
+              no: "03",
+              title: "Creative Automation",
+              desc: "AI-assisted content generation with human-in-the-loop quality control. Brand voice systems, scoring models, editorial review layers.",
+            },
+          ].map((c) => (
+            <div className="cap reveal" key={c.no}>
+              <span className="cap__no">{c.no}</span>
+              <h3 className="cap__title">{c.title}</h3>
+              <p className="cap__desc">{c.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
-    </div>
+    </>
   );
 }

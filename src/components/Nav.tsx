@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-const links = [
+const NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/generator", label: "Toolkit" },
   { href: "/about", label: "About" },
@@ -15,36 +15,33 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <nav
-      className={`sticky top-0 z-50 bg-background transition-[border-color] duration-300 ${
-        scrolled ? "border-b border-border" : "border-b border-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-6">
+    <nav className={`nav${scrolled ? " is-scrolled" : ""}`}>
+      <div className="wrap nav__inner">
         <Link
           href="/"
-          className="text-base font-medium tracking-tight text-foreground"
+          className="nav__brand"
+          aria-label="Katherine Moffat, home"
         >
-          Katherine Moffat
+          <span className="mark" aria-hidden="true"></span>
+          <span className="name">Katherine Moffat</span>
         </Link>
-        <div className="flex items-center gap-6 md:gap-8">
-          {links.map(({ href, label }) => (
+        <div className="nav__links">
+          {NAV_LINKS.map((l, i) => (
             <Link
-              key={href}
-              href={href}
-              className={`text-sm transition-colors ${
-                pathname === href
-                  ? "text-foreground underline decoration-accent decoration-2 underline-offset-4"
-                  : "text-muted hover:text-accent"
-              }`}
+              key={l.href}
+              href={l.href}
+              className={`nav__link${pathname === l.href ? " is-active" : ""}`}
+              aria-current={pathname === l.href ? "page" : undefined}
             >
-              {label}
+              <span className="n">{String(i + 1).padStart(2, "0")}</span>
+              {l.label}
             </Link>
           ))}
         </div>

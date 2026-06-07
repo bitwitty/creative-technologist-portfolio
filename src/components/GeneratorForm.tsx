@@ -42,9 +42,43 @@ interface GeneratorFormProps {
   onLoading: (loading: boolean) => void;
 }
 
-const inputClasses =
-  "w-full border border-border bg-surface px-3 py-2.5 text-sm text-foreground placeholder:text-muted/40 transition-colors duration-200 focus:border-accent focus:outline-none";
-const labelClasses = "block font-mono text-xs text-muted";
+function SelectField({
+  id,
+  label,
+  value,
+  onChange,
+  options,
+  placeholder,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: string[];
+  placeholder: string;
+}) {
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <div className="select-wrap">
+        <select
+          id={id}
+          className="control"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          required
+        >
+          <option value="">{placeholder}</option>
+          {options.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+}
 
 export default function GeneratorForm({
   mode,
@@ -70,13 +104,22 @@ export default function GeneratorForm({
 
     let input: ToolkitInput;
     if (mode === "rewrite") {
-      if (!copy || !voice) { onError("All fields are required."); return; }
+      if (!copy || !voice) {
+        onError("All fields are required.");
+        return;
+      }
       input = { mode: "rewrite", copy, voice };
     } else if (mode === "brief") {
-      if (!product || !audience || !channel || !constraint) { onError("All fields are required."); return; }
+      if (!product || !audience || !channel || !constraint) {
+        onError("All fields are required.");
+        return;
+      }
       input = { mode: "brief", product, audience, channel, constraint };
     } else {
-      if (!concept || !style) { onError("All fields are required."); return; }
+      if (!concept || !style) {
+        onError("All fields are required.");
+        return;
+      }
       input = { mode: "image-prompt", concept, style };
     }
 
@@ -104,96 +147,80 @@ export default function GeneratorForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form className="gen-form" onSubmit={handleSubmit}>
       {mode === "rewrite" && (
         <>
-          <div>
-            <label htmlFor="copy" className={labelClasses}>Copy to rewrite</label>
+          <div className="field">
+            <label htmlFor="copy">Copy to rewrite</label>
             <textarea
               id="copy"
+              className="control"
               maxLength={500}
               rows={4}
               value={copy}
               onChange={(e) => setCopy(e.target.value)}
               placeholder="Paste the copy you want rewritten"
-              className={`mt-2 resize-none ${inputClasses}`}
               required
             />
-            <p className="mt-1 text-right font-mono text-xs text-muted/30">
-              {copy.length}/500
-            </p>
+            <p className="char-count">{copy.length}/500</p>
           </div>
-          <div>
-            <label htmlFor="voice" className={labelClasses}>Target voice</label>
-            <select
-              id="voice"
-              value={voice}
-              onChange={(e) => setVoice(e.target.value)}
-              className={`mt-2 ${inputClasses}`}
-              required
-            >
-              <option value="">Select voice</option>
-              {VOICES.map((v) => (
-                <option key={v} value={v}>{v}</option>
-              ))}
-            </select>
-          </div>
+          <SelectField
+            id="voice"
+            label="Target voice"
+            value={voice}
+            onChange={setVoice}
+            options={VOICES}
+            placeholder="Select voice"
+          />
         </>
       )}
 
       {mode === "brief" && (
         <>
-          <div>
-            <label htmlFor="product" className={labelClasses}>Product or service</label>
+          <div className="field">
+            <label htmlFor="product">Product or service</label>
             <input
               id="product"
+              className="control"
               type="text"
               maxLength={200}
               value={product}
               onChange={(e) => setProduct(e.target.value)}
               placeholder="e.g. A project management tool for creative teams"
-              className={`mt-2 ${inputClasses}`}
               required
             />
           </div>
-          <div>
-            <label htmlFor="audience" className={labelClasses}>Target audience</label>
+          <div className="field">
+            <label htmlFor="audience">Target audience</label>
             <input
               id="audience"
+              className="control"
               type="text"
               maxLength={200}
               value={audience}
               onChange={(e) => setAudience(e.target.value)}
               placeholder="e.g. Marketing managers at mid-size agencies"
-              className={`mt-2 ${inputClasses}`}
               required
             />
           </div>
-          <div>
-            <label htmlFor="channel" className={labelClasses}>Channel</label>
-            <select
-              id="channel"
-              value={channel}
-              onChange={(e) => setChannel(e.target.value)}
-              className={`mt-2 ${inputClasses}`}
-              required
-            >
-              <option value="">Select channel</option>
-              {CHANNELS.map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="constraint" className={labelClasses}>Constraint</label>
+          <SelectField
+            id="channel"
+            label="Channel"
+            value={channel}
+            onChange={setChannel}
+            options={CHANNELS}
+            placeholder="Select channel"
+          />
+          <div className="field">
+            <label htmlFor="constraint">Constraint</label>
             <input
               id="constraint"
+              className="control"
               type="text"
               maxLength={200}
               value={constraint}
               onChange={(e) => setConstraint(e.target.value)}
               placeholder="e.g. Under 100 words, no jargon, include a free trial CTA"
-              className={`mt-2 ${inputClasses}`}
               required
             />
           </div>
@@ -202,46 +229,39 @@ export default function GeneratorForm({
 
       {mode === "image-prompt" && (
         <>
-          <div>
-            <label htmlFor="concept" className={labelClasses}>Concept</label>
+          <div className="field">
+            <label htmlFor="concept">Concept</label>
             <textarea
               id="concept"
+              className="control"
               maxLength={500}
               rows={3}
               value={concept}
               onChange={(e) => setConcept(e.target.value)}
-              placeholder="Describe what you want to see"
-              className={`mt-2 resize-none ${inputClasses}`}
+              placeholder="Describe what you want to see. e.g. A ceramic mug on a rustic wooden table, morning light, steam rising"
               required
             />
-            <p className="mt-1 text-right font-mono text-xs text-muted/30">
-              {concept.length}/500
-            </p>
+            <p className="char-count">{concept.length}/500</p>
           </div>
-          <div>
-            <label htmlFor="style" className={labelClasses}>Style direction</label>
-            <select
-              id="style"
-              value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              className={`mt-2 ${inputClasses}`}
-              required
-            >
-              <option value="">Select style</option>
-              {STYLES.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-          </div>
+          <SelectField
+            id="style"
+            label="Style direction"
+            value={style}
+            onChange={setStyle}
+            options={STYLES}
+            placeholder="Select style"
+          />
         </>
       )}
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="bg-accent px-8 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-50"
-      >
-        {isSubmitting ? "Generating..." : "Generate"}
+      <button type="submit" className="btn-gen" disabled={isSubmitting}>
+        {isSubmitting ? (
+          <>
+            <span className="spin" aria-hidden="true"></span> Generating
+          </>
+        ) : (
+          "Generate"
+        )}
       </button>
     </form>
   );

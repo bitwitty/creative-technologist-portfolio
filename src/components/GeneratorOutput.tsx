@@ -26,31 +26,28 @@ function OutputBlock({
   detail?: string;
 }) {
   return (
-    <div className="border-l-2 border-accent py-1 pl-5">
-      <div className="flex items-center justify-between">
-        <p className="font-mono text-xs text-muted">{label}</p>
+    <div className="out-block">
+      <div className="out-block__head">
+        <p className="out-block__label">{label}</p>
         <CopyButton text={content} />
       </div>
-      <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-foreground">
-        {content}
-      </p>
-      {detail && (
-        <p className="mt-1 font-mono text-xs text-muted/40">{detail}</p>
-      )}
+      <p className="out-block__text">{content}</p>
+      {detail ? <p className="out-block__detail">{detail}</p> : null}
     </div>
   );
 }
 
 function Skeleton() {
   return (
-    <div className="space-y-6">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="border-l-2 border-border py-1 pl-5">
-          <div className="h-3 w-20 animate-pulse bg-surface" />
-          <div className="mt-3 space-y-2">
-            <div className="h-3 w-full animate-pulse bg-surface" />
-            <div className="h-3 w-3/4 animate-pulse bg-surface" />
-          </div>
+    <div>
+      {[0, 1, 2].map((i) => (
+        <div className="skl" key={i}>
+          <div className="skl__bar" style={{ width: "28%" }}></div>
+          <div
+            className="skl__bar"
+            style={{ width: "100%", marginTop: "0.8rem" }}
+          ></div>
+          <div className="skl__bar" style={{ width: "80%" }}></div>
         </div>
       ))}
     </div>
@@ -59,7 +56,7 @@ function Skeleton() {
 
 function RewriteResult({ data }: { data: RewriteOutput }) {
   return (
-    <div className="space-y-6">
+    <div>
       {data.rewrites.map((r, i) => (
         <OutputBlock key={i} label={r.voice} content={r.text} />
       ))}
@@ -69,7 +66,7 @@ function RewriteResult({ data }: { data: RewriteOutput }) {
 
 function BriefResult({ data }: { data: BriefOutput }) {
   return (
-    <div className="space-y-6">
+    <div>
       <OutputBlock label="Headline" content={data.headline} />
       <OutputBlock
         label="Body"
@@ -83,7 +80,7 @@ function BriefResult({ data }: { data: BriefOutput }) {
 
 function ImagePromptResult({ data }: { data: ImagePromptOutput }) {
   return (
-    <div className="space-y-6">
+    <div>
       <OutputBlock label="Prompt" content={data.prompt} />
       <OutputBlock label="Negative prompt" content={data.negativePrompt} />
       <OutputBlock label="Parameters" content={data.parameters} />
@@ -101,21 +98,18 @@ export default function GeneratorOutput({
 
   if (error) {
     return (
-      <div className="border-l-2 border-accent/40 bg-accent/5 px-5 py-3">
-        <p className="text-sm text-accent">{error}</p>
+      <div className="out-error">
+        <p>{error}</p>
       </div>
     );
   }
 
   if (!data) {
-    return (
-      <p className="text-sm text-muted">
-        Results will appear here.
-      </p>
-    );
+    return <div className="out-empty">{">"} Results will appear here.</div>;
   }
 
-  if (mode === "rewrite") return <RewriteResult data={data as RewriteOutput} />;
+  if (mode === "rewrite")
+    return <RewriteResult data={data as RewriteOutput} />;
   if (mode === "brief") return <BriefResult data={data as BriefOutput} />;
   return <ImagePromptResult data={data as ImagePromptOutput} />;
 }

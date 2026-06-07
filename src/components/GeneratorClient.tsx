@@ -6,19 +6,22 @@ import GeneratorForm from "./GeneratorForm";
 import GeneratorOutput from "./GeneratorOutput";
 import HowItWorks from "./HowItWorks";
 
-const TABS: { mode: ToolkitMode; label: string; description: string }[] = [
+const TABS: { mode: ToolkitMode; no: string; label: string; description: string }[] = [
   {
     mode: "rewrite",
+    no: "01",
     label: "Rewrite",
     description: "Paste copy, pick a voice, get three rewrites.",
   },
   {
     mode: "brief",
+    no: "02",
     label: "Brief to Copy",
     description: "Fill a creative brief, get a first draft.",
   },
   {
     mode: "image-prompt",
+    no: "03",
     label: "Image Prompt",
     description: "Describe a concept, get a production-ready prompt.",
   },
@@ -45,41 +48,34 @@ export default function GeneratorClient() {
 
   return (
     <>
-      {/* Tabs */}
-      <div className="flex gap-0 border-b border-border">
-        {TABS.map((tab) => (
+      <div className="tabs" role="tablist" aria-label="Toolkit modes">
+        {TABS.map((t) => (
           <button
-            key={tab.mode}
+            key={t.mode}
+            role="tab"
+            aria-selected={activeMode === t.mode}
+            className={`tab${activeMode === t.mode ? " is-active" : ""}`}
             onClick={() => {
-              setActiveMode(tab.mode);
+              setActiveMode(t.mode);
               setError(null);
             }}
-            className={`px-5 py-3 font-mono text-sm transition-colors ${
-              activeMode === tab.mode
-                ? "border-b-2 border-accent text-foreground"
-                : "text-muted hover:text-accent"
-            }`}
           >
-            {tab.label}
+            <span className="tn">{t.no}</span> {t.label}
           </button>
         ))}
       </div>
 
-      {/* Tab description */}
-      <p className="mt-5 text-sm text-muted">{activeTab.description}</p>
+      <p className="tab__desc">{activeTab.description}</p>
 
-      {/* Form + Output */}
-      <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <GeneratorForm
-            key={activeMode}
-            mode={activeMode}
-            onResult={handleResult}
-            onError={handleError}
-            onLoading={setIsLoading}
-          />
-        </div>
-        <div className="md:col-span-7">
+      <div className="gen-grid">
+        <GeneratorForm
+          key={activeMode}
+          mode={activeMode}
+          onResult={handleResult}
+          onError={handleError}
+          onLoading={setIsLoading}
+        />
+        <div className="gen-out">
           <GeneratorOutput
             mode={activeMode}
             data={results[activeMode] || null}
@@ -89,10 +85,7 @@ export default function GeneratorClient() {
         </div>
       </div>
 
-      {/* How it works */}
-      <div className="mt-20">
-        <HowItWorks />
-      </div>
+      <HowItWorks />
     </>
   );
 }

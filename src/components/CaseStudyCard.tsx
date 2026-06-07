@@ -1,64 +1,113 @@
-interface CaseStudyCardProps {
+"use client";
+
+/**
+ * CaseStudyCard - Accordion-style case study component.
+ * Used on the Work page for expandable project details.
+ * This component supports the accordion pattern with metrics.
+ */
+
+interface CaseMetric {
+  num: string;
+  u: string;
+  label: string;
+}
+
+export interface CaseStudyCardProps {
+  number: string;
   title: string;
+  sub?: string;
   problem: string;
   system: string;
   stack: string[];
   output: string;
   impact: string;
-  number: string;
+  metrics?: CaseMetric[];
+  open?: boolean;
+  onToggle?: () => void;
 }
 
 export default function CaseStudyCard({
+  number,
   title,
+  sub,
   problem,
   system,
   stack,
   output,
   impact,
-  number,
+  metrics,
+  open = false,
+  onToggle,
 }: CaseStudyCardProps) {
   return (
-    <article className="group border-t border-border py-12 pl-0 transition-all duration-300 hover:border-l-2 hover:border-l-accent hover:pl-6 md:py-16">
-      <div className="flex items-baseline gap-4">
-        <span className="font-mono text-sm text-accent">{number}</span>
-        <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+    <div className={`case${open ? " is-open" : ""}`}>
+      <button
+        className="case__row"
+        aria-expanded={open}
+        onClick={onToggle}
+      >
+        <span className="case__no">{number}</span>
+        <span className="case__name">
           {title}
-        </h2>
-      </div>
-      <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-12">
-        <div className="space-y-8 md:col-span-7">
-          <div>
-            <p className="font-mono text-xs text-muted">Problem</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
-              {problem}
-            </p>
+          {sub && (
+            <>
+              .{" "}
+              <span className="thin" style={{ color: "var(--muted)" }}>
+                {sub}
+              </span>
+            </>
+          )}
+        </span>
+        <span className="case__toggle">
+          {open ? "Close" : "View"}
+          <span className="case__plus" aria-hidden="true"></span>
+        </span>
+      </button>
+      <div className="case__panel">
+        <div className="case__inner">
+          <div className="case__fields">
+            <div>
+              <p className="field__label">Problem</p>
+              <p className="field__text dim">{problem}</p>
+            </div>
+            <div>
+              <p className="field__label">System</p>
+              <p className="field__text">{system}</p>
+            </div>
+            <div>
+              <p className="field__label">Output</p>
+              <p className="field__text dim">{output}</p>
+            </div>
+            <div>
+              <p className="field__label">Impact</p>
+              <p className="field__text">{impact}</p>
+            </div>
           </div>
-          <div>
-            <p className="font-mono text-xs text-muted">System</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
-              {system}
-            </p>
-          </div>
-          <div>
-            <p className="font-mono text-xs text-muted">Output</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
-              {output}
-            </p>
-          </div>
-          <div>
-            <p className="font-mono text-xs text-muted">Impact</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
-              {impact}
-            </p>
+          <div className="case__aside">
+            <p className="field__label">Stack</p>
+            <div className="stack">
+              {stack.map((t) => (
+                <span className="chip" key={t}>
+                  {t}
+                </span>
+              ))}
+            </div>
+            {metrics && metrics.length > 0 && (
+              <div className="metrics">
+                {metrics.map((m, i) => (
+                  <div key={i}>
+                    <p className="metric__num">
+                      {m.num}
+                      {m.u ? <span className="u"> {m.u}</span> : null}
+                    </p>
+                    <p className="metric__label">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-        <div className="md:col-span-5">
-          <p className="font-mono text-xs text-muted">Stack</p>
-          <p className="mt-2 font-mono text-sm text-muted">
-            {stack.join(" / ")}
-          </p>
-        </div>
       </div>
-    </article>
+    </div>
   );
 }
