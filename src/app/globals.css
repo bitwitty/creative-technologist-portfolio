@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0C0D0A;
-  --color-foreground: #F3F2E9;
-  --color-accent: #A78BFA;
-  --color-muted: #ACAC9F;
-  --color-border: rgba(243,242,233,0.12);
-  --color-surface: #131410;
-  --color-surface-2: #1B1C16;
-  --color-faint: #67685C;
-  --color-line-2: rgba(243,242,233,0.22);
+  --color-background: #F3F2E9;
+  --color-foreground: #0C0D0A;
+  --color-accent: #7C3AED;
+  --color-muted: #6B6960;
+  --color-border: rgba(12,13,10,0.10);
+  --color-surface: #E8E7DE;
+  --color-surface-2: #DDDCD3;
+  --color-faint: #9E9D94;
+  --color-line-2: rgba(12,13,10,0.18);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 /* ============================================================
    Katherine Moffat -- Creative Technologist
-   "POSTER" direction. Dark canvas, purple accent,
+   "POSTER" direction. Light canvas, purple accent,
    poster-scale type, dramatic weight + scale contrast.
    Geist Sans + Geist Mono. No em dashes. No decorative SVG.
    ============================================================ */
 
 :root {
-  --ink:      #0C0D0A;
-  --ink-2:    #131410;
-  --ink-3:    #1B1C16;
-  --paper:    #F3F2E9;
-  --muted:    #ACAC9F;
-  --faint:    #67685C;
-  --line:     rgba(243,242,233,0.12);
-  --line-2:   rgba(243,242,233,0.22);
-  --accent:   #A78BFA;
-  --accent-d: color-mix(in oklab, var(--accent) 85%, #000);
+  --ink:      #F3F2E9;
+  --ink-2:    #E8E7DE;
+  --ink-3:    #DDDCD3;
+  --paper:    #0C0D0A;
+  --muted:    #6B6960;
+  --faint:    #9E9D94;
+  --line:     rgba(12,13,10,0.10);
+  --line-2:   rgba(12,13,10,0.18);
+  --accent:   #7C3AED;
+  --accent-d: color-mix(in oklab, var(--accent) 85%, #fff);
   --on-accent:#F3F2E9;
   --sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   --mono: var(--font-geist-mono), ui-monospace, monospace;
