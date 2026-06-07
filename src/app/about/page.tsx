@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -93,6 +94,53 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      {/* AI Imagery */}
+      <section className="reveal" data-d="3" style={{ marginTop: "clamp(3rem, 8vw, 6rem)" }}>
+        <div className="section__label">
+          <p className="eyebrow">AI-generated imagery</p>
+          <span className="bar" aria-hidden="true"></span>
+          <p className="eyebrow">Midjourney / Styled as analog film</p>
+        </div>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "clamp(0.5rem, 1.5vw, 1rem)",
+          marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
+        }}>
+          {[
+            { src: "/houseofateliosimages/ai-01.png", alt: "AI-generated editorial portrait with cheetah in golden haze" },
+            { src: "/houseofateliosimages/ai-02.png", alt: "AI-generated underwater figure with golden bokeh" },
+            { src: "/houseofateliosimages/ai-03.png", alt: "AI-generated portrait with flowers against overcast sky" },
+            { src: "/houseofateliosimages/ai-04.png", alt: "AI-generated coastal scene with motion blur" },
+            { src: "/houseofateliosimages/ai-05.png", alt: "AI-generated silhouette on sailboat at dusk" },
+          ].map((img) => (
+            <div key={img.src} style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 640px) 50vw, 20vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          ))}
+        </div>
+        <p style={{
+          marginTop: "1rem",
+          font: "400 0.74rem/1.4 var(--mono)",
+          color: "var(--muted)",
+        }}>
+          More at{" "}
+          <a
+            href="https://www.instagram.com/houseofatelios/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "var(--accent)", transition: "opacity 0.2s" }}
+          >
+            @houseofatelios
+          </a>
+        </p>
+      </section>
     </div>
   );
 }
