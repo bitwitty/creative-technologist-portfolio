@@ -36,9 +36,8 @@ export default function Home() {
 
         <div className="hero__lower">
           <p className="hero__sub reveal" data-d="2">
-            <span className="lead">Creative technologist.</span> I build AI
-            pipelines, automate the repetitive parts of creative work, and
-            ship tools that actually get used.
+            <span className="lead">Five shipped products in three months.</span> A
+            decade of creative production setting the quality bar.
           </p>
           <div className="hero__ctas reveal" data-d="3">
             <Link className="btn-pill btn-pill--accent" href="/work">
@@ -77,18 +76,18 @@ export default function Home() {
           {[
             {
               no: "01",
-              title: "AI Pipeline Design",
-              desc: "I wire up APIs, LLMs, and data sources into workflows that run on their own. The goal is always the same: do it once, then let the system handle it.",
+              title: "Creative Production",
+              desc: "9 years producing editorial, photography, and content for brands including Expedia, Four Seasons, Fairmont, and publications including Vogue Greece, Vogue Portugal, and Glamour Hungary.",
             },
             {
               no: "02",
-              title: "Rapid Prototyping",
-              desc: "I build working tools quickly. CRMs, dashboards, creative toolkits. Not mockups or decks. Real software that people use every day.",
+              title: "Shipped Products",
+              desc: "5 products shipped in 3 months. 73 venues scored automatically. 3 brands managed by one agent weekly. A CRM used daily. A live demo on this site.",
             },
             {
               no: "03",
-              title: "Creative Automation",
-              desc: "AI that generates content with a human checking the output before it ships. Voice systems, scoring, editorial review. The machine drafts, the person decides.",
+              title: "AI Image Generation",
+              desc: "AI image generation alongside traditional film photography. See the work at @houseofatelios.",
             },
           ].map((c) => (
             <div className="cap reveal" key={c.no}>

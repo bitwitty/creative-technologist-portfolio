@@ -36,11 +36,15 @@ export default function AboutPage() {
             </div>
             <div className="fact">
               <dt>Focus</dt>
-              <dd>AI systems &amp; tooling</dd>
+              <dd>AI creative systems</dd>
             </div>
             <div className="fact">
               <dt>Also</dt>
-              <dd>Photographer / Editor</dd>
+              <dd>Photographer / Editor / Writer</dd>
+            </div>
+            <div className="fact">
+              <dt>AI imagery</dt>
+              <dd><a href="https://www.instagram.com/houseofatelios/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>@houseofatelios</a></dd>
             </div>
             <div className="fact">
               <dt>Status</dt>
@@ -51,22 +55,27 @@ export default function AboutPage() {
         <div className="about__body reveal" data-d="2">
           <div className="about__prose">
             <p>
-              <span className="lead-in">I build systems</span> that let small
-              teams produce work that used to require a department. AI
-              pipelines, automation, tooling. The kind of thing where you set up
-              the workflow once and it just runs.
+              <span className="lead-in">For the last nine years</span> I've
+              been a writer, editor, content strategist, and photographer.
+              I've freelanced for Expedia and Four Seasons, handled marketing
+              for Sotheby's International Realty, ran editorial for a health
+              publication for nearly five years, and was named a Vogue Greece
+              New Talent in 2025.
             </p>
             <p>
-              I got here sideways. Marketing, brand strategy, ops, project
-              management, creative direction, consulting. I've done enough of
-              each to know that building the tool is only half the job. The
-              other half is making sure it actually fits how people work.
+              In the last three months I've shipped five products using AI: a
+              travel directory that scores 73 venues through automated research
+              and scoring with manual review, a marketing agent that generates
+              SEO and social drafts across three brands weekly, a CRM that
+              replaced a client's Notion setup and is used daily, a podcast
+              knowledge engine, and this portfolio with a live creative toolkit.
+              All on GitHub.
             </p>
             <p>
-              I'm also a photographer and editor. That matters because it
-              means I actually care whether the output is good, not just
-              whether the system works. Everything I build has a human
-              review step. I don't trust fully automated creative.
+              I also generate AI imagery using Midjourney, for the images and
+              ideas I have in my head that have yet to be shot. My photography
+              background means I know what commercially usable output looks
+              like, and I work in both.
             </p>
           </div>
           <div className="about__cv">
