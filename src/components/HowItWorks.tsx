@@ -1,7 +1,7 @@
 export default function HowItWorks() {
   return (
     <details className="group border-t border-border">
-      <summary className="cursor-pointer py-5 text-sm font-medium text-foreground">
+      <summary className="cursor-pointer py-5 text-sm font-medium text-foreground transition-colors hover:text-accent">
         <span className="group-open:hidden">+ How this works</span>
         <span className="hidden group-open:inline">- How this works</span>
       </summary>

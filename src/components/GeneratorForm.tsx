@@ -43,9 +43,8 @@ interface GeneratorFormProps {
 }
 
 const inputClasses =
-  "w-full border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted/50 transition-colors duration-200 focus:border-foreground focus:outline-none";
-const labelClasses =
-  "block font-mono text-xs text-muted";
+  "w-full border border-border bg-surface px-3 py-2.5 text-sm text-foreground placeholder:text-muted/40 transition-colors duration-200 focus:border-accent focus:outline-none";
+const labelClasses = "block font-mono text-xs text-muted";
 
 export default function GeneratorForm({
   mode,
@@ -55,17 +54,14 @@ export default function GeneratorForm({
 }: GeneratorFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Rewrite state
   const [copy, setCopy] = useState("");
   const [voice, setVoice] = useState("");
 
-  // Brief state
   const [product, setProduct] = useState("");
   const [audience, setAudience] = useState("");
   const [channel, setChannel] = useState("");
   const [constraint, setConstraint] = useState("");
 
-  // Image prompt state
   const [concept, setConcept] = useState("");
   const [style, setStyle] = useState("");
 
@@ -123,7 +119,7 @@ export default function GeneratorForm({
               className={`mt-2 resize-none ${inputClasses}`}
               required
             />
-            <p className="mt-1 text-right font-mono text-xs text-muted/50">
+            <p className="mt-1 text-right font-mono text-xs text-muted/30">
               {copy.length}/500
             </p>
           </div>
@@ -214,11 +210,11 @@ export default function GeneratorForm({
               rows={3}
               value={concept}
               onChange={(e) => setConcept(e.target.value)}
-              placeholder="Describe what you want to see. e.g. A ceramic mug on a rustic wooden table, morning light, steam rising"
+              placeholder="Describe what you want to see"
               className={`mt-2 resize-none ${inputClasses}`}
               required
             />
-            <p className="mt-1 text-right font-mono text-xs text-muted/50">
+            <p className="mt-1 text-right font-mono text-xs text-muted/30">
               {concept.length}/500
             </p>
           </div>
@@ -243,7 +239,7 @@ export default function GeneratorForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-foreground px-8 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90 disabled:opacity-50"
+        className="bg-accent px-8 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {isSubmitting ? "Generating..." : "Generate"}
       </button>

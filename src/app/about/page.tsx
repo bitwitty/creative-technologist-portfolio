@@ -8,17 +8,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 md:px-8">
-      <section className="py-16 md:py-24">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+    <div className="mx-auto max-w-7xl px-6 md:px-10">
+      <section className="py-20 md:py-32">
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-7">
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted">
               About
             </p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Katherine Moffat
+            <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
+              Katherine Moffat<span className="text-accent">.</span>
             </h1>
-            <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted">
+            <div className="mt-10 space-y-5 text-[15px] leading-relaxed text-muted">
               <p>
                 I build AI-native systems for marketing, brand, and creative
                 teams. Pipelines, not prompts. The kind of infrastructure that
@@ -43,7 +43,7 @@ export default function AboutPage() {
               <a
                 href="/placeholder-cv.pdf"
                 download
-                className="text-sm font-medium text-accent transition-colors hover:text-foreground"
+                className="font-mono text-sm text-accent transition-colors hover:text-foreground"
               >
                 {/* [PLACEHOLDER] Replace href with actual CV PDF path */}
                 Download CV &darr;

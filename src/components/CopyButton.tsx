@@ -18,7 +18,7 @@ export default function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-xs text-muted transition-colors hover:text-foreground"
+      className="font-mono text-xs text-muted transition-colors hover:text-accent"
       aria-label={copied ? "Copied" : "Copy to clipboard"}
     >
       {copied ? "Copied" : "Copy"}

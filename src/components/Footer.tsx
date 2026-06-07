@@ -1,26 +1,20 @@
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-8">
-        <div>
-          <p className="text-sm text-foreground">Katherine Moffat</p>
-          <p className="mt-1 text-xs text-muted">
-            Creative Technologist
-          </p>
-        </div>
-        <div className="flex gap-6 text-sm text-muted">
-          <Link href="/work" className="transition-colors hover:text-foreground">
-            Work
-          </Link>
-          <Link href="/generator" className="transition-colors hover:text-foreground">
-            Toolkit
-          </Link>
-          <Link href="/about" className="transition-colors hover:text-foreground">
-            About
-          </Link>
-        </div>
+      <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
+        <p className="text-3xl font-semibold tracking-tight md:text-4xl">
+          Let&apos;s talk<span className="text-accent">.</span>
+        </p>
+        <a
+          href="mailto:hello@katherinemoffat.com"
+          className="mt-4 inline-block font-mono text-sm text-muted transition-colors hover:text-accent"
+        >
+          {/* [PLACEHOLDER] Replace with real email */}
+          hello@katherinemoffat.com
+        </a>
+        <p className="mt-12 font-mono text-xs text-muted/50">
+          &copy; {new Date().getFullYear()} Katherine Moffat
+        </p>
       </div>
     </footer>
   );

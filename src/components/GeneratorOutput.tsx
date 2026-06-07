@@ -26,7 +26,7 @@ function OutputBlock({
   detail?: string;
 }) {
   return (
-    <div className="border-l-2 border-accent pl-5 py-1">
+    <div className="border-l-2 border-accent py-1 pl-5">
       <div className="flex items-center justify-between">
         <p className="font-mono text-xs text-muted">{label}</p>
         <CopyButton text={content} />
@@ -35,7 +35,7 @@ function OutputBlock({
         {content}
       </p>
       {detail && (
-        <p className="mt-1 font-mono text-xs text-muted/60">{detail}</p>
+        <p className="mt-1 font-mono text-xs text-muted/40">{detail}</p>
       )}
     </div>
   );
@@ -45,7 +45,7 @@ function Skeleton() {
   return (
     <div className="space-y-6">
       {[1, 2, 3].map((i) => (
-        <div key={i} className="border-l-2 border-border pl-5 py-1">
+        <div key={i} className="border-l-2 border-border py-1 pl-5">
           <div className="h-3 w-20 animate-pulse bg-surface" />
           <div className="mt-3 space-y-2">
             <div className="h-3 w-full animate-pulse bg-surface" />
@@ -101,7 +101,7 @@ export default function GeneratorOutput({
 
   if (error) {
     return (
-      <div className="border-l-2 border-accent/40 bg-accent/5 px-4 py-3">
+      <div className="border-l-2 border-accent/40 bg-accent/5 px-5 py-3">
         <p className="text-sm text-accent">{error}</p>
       </div>
     );

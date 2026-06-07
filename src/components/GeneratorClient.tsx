@@ -54,10 +54,10 @@ export default function GeneratorClient() {
               setActiveMode(tab.mode);
               setError(null);
             }}
-            className={`px-4 py-3 text-sm font-medium transition-colors ${
+            className={`px-5 py-3 font-mono text-sm transition-colors ${
               activeMode === tab.mode
-                ? "border-b-2 border-foreground text-foreground"
-                : "text-muted hover:text-foreground"
+                ? "border-b-2 border-accent text-foreground"
+                : "text-muted hover:text-accent"
             }`}
           >
             {tab.label}
@@ -66,10 +66,10 @@ export default function GeneratorClient() {
       </div>
 
       {/* Tab description */}
-      <p className="mt-4 text-sm text-muted">{activeTab.description}</p>
+      <p className="mt-5 text-sm text-muted">{activeTab.description}</p>
 
       {/* Form + Output */}
-      <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-12">
+      <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <GeneratorForm
             key={activeMode}
@@ -90,7 +90,7 @@ export default function GeneratorClient() {
       </div>
 
       {/* How it works */}
-      <div className="mt-16">
+      <div className="mt-20">
         <HowItWorks />
       </div>
     </>

@@ -5,6 +5,7 @@ interface CaseStudyCardProps {
   stack: string[];
   output: string;
   impact: string;
+  number: string;
 }
 
 export default function CaseStudyCard({
@@ -14,53 +15,48 @@ export default function CaseStudyCard({
   stack,
   output,
   impact,
+  number,
 }: CaseStudyCardProps) {
   return (
-    <article className="border-t border-border py-10 md:py-14">
-      <h2 className="text-xl font-semibold tracking-tight md:text-2xl">
-        {title}
-      </h2>
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-12">
-        <div className="space-y-6 md:col-span-7">
+    <article className="group border-t border-border py-12 pl-0 transition-all duration-300 hover:border-l-2 hover:border-l-accent hover:pl-6 md:py-16">
+      <div className="flex items-baseline gap-4">
+        <span className="font-mono text-sm text-accent">{number}</span>
+        <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+          {title}
+        </h2>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-12">
+        <div className="space-y-8 md:col-span-7">
           <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">
-              Problem
+            <p className="font-mono text-xs text-muted">Problem</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+              {problem}
             </p>
-            <p className="mt-2 text-sm text-foreground">{problem}</p>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">
-              System
+            <p className="font-mono text-xs text-muted">System</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+              {system}
             </p>
-            <p className="mt-2 text-sm text-foreground">{system}</p>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">
-              Output
+            <p className="font-mono text-xs text-muted">Output</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+              {output}
             </p>
-            <p className="mt-2 text-sm text-foreground">{output}</p>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">
-              Impact
+            <p className="font-mono text-xs text-muted">Impact</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+              {impact}
             </p>
-            <p className="mt-2 text-sm text-foreground">{impact}</p>
           </div>
         </div>
         <div className="md:col-span-5">
-          <p className="text-xs font-medium uppercase tracking-widest text-muted">
-            Stack
+          <p className="font-mono text-xs text-muted">Stack</p>
+          <p className="mt-2 font-mono text-sm text-muted">
+            {stack.join(" / ")}
           </p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {stack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded bg-surface px-2 py-1 font-mono text-xs text-muted"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </article>

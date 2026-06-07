@@ -9,17 +9,18 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 md:px-8">
-      <section className="py-16 md:py-24">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted">
+    <div className="mx-auto max-w-7xl px-6 md:px-10">
+      <section className="py-20 md:py-32">
+        <p className="font-mono text-xs uppercase tracking-widest text-muted">
           Selected Work
         </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-          Systems I have built.
+        <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
+          Systems I have built<span className="text-accent">.</span>
         </h1>
       </section>
 
       <CaseStudyCard
+        number="01"
         title="Dry Trip: AI-Curated Travel Directory"
         problem="Curating a luxury directory of alcohol-free travel experiences manually doesn't scale. Every venue needs discovery, verification, scoring, and editorial review before publishing."
         system="Automated discovery pipeline. Google Places API finds candidates across 15 search queries per city. Scrapers pull website and review data. Claude scores each venue on a 1-5 scale against brand criteria. Flagged venues go to a human editorial review dashboard. Approved venues publish to the directory via Supabase with ISR."
@@ -39,6 +40,7 @@ export default function WorkPage() {
       />
 
       <CaseStudyCard
+        number="02"
         title="CMO Agent: Multi-Brand Marketing Automation"
         problem="Three brands need consistent weekly content. SEO analysis, social drafts, competitor monitoring, Reddit engagement. One person can't run the full cycle manually across three brands every week."
         system="Python agent runs scheduled passes via GitHub Actions. Pulls Search Console and GA4 data, identifies content gaps, generates drafts via Claude, monitors Reddit for relevant threads, tracks competitor homepage changes via diff detection. All output goes to Notion for human approval before publishing."
@@ -56,6 +58,7 @@ export default function WorkPage() {
       />
 
       <CaseStudyCard
+        number="03"
         title="18th Grain: Custom CRM"
         problem="A luxury golf company was running their sales pipeline, contacts, and financials across Notion pages. It worked until it didn't. They needed a real CRM without the overhead of Salesforce."
         system="Custom CRM with dashboard KPIs, Kanban pipeline, account and contact management, website inquiry capture via webhook, and financial tracking. Built to replace a Notion workspace, not replicate enterprise software."
@@ -70,8 +73,6 @@ export default function WorkPage() {
         output="Production CRM used daily by a three-person team. Dashboard, pipeline views, contact management, website-to-pipeline inquiry flow, invoice tracking."
         impact="Replaced a patched-together Notion setup with a purpose-built tool. Delivered in weeks, not months."
       />
-
-      {/* Add more CaseStudyCard components here */}
     </div>
   );
 }
