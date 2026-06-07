@@ -29,29 +29,24 @@ export default function Footer() {
               <span className="label">Channels</span>
             </div>
             <ul>
-              {/* [PLACEHOLDER] Replace with real profile URLs */}
               <li>
-                <a href="https://github.com" target="_blank" rel="noopener">
+                <a href="https://github.com/bitwitty" target="_blank" rel="noopener">
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/in/moffatkatherine" target="_blank" rel="noopener">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://read.cv" target="_blank" rel="noopener">
-                  Read.cv
+                <a href="https://www.instagram.com/katherinemoff.at/" target="_blank" rel="noopener">
+                  Instagram / Photography
                 </a>
               </li>
               <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Instagram / Photography
+                <a href="https://www.instagram.com/houseofatelios/" target="_blank" rel="noopener">
+                  Instagram / AI Imagery
                 </a>
               </li>
             </ul>
