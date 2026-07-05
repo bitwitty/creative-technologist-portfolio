@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katherine Moffat — CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: letter;
+    margin: 0.5in 0.65in;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  .header { margin-bottom: 10pt; }
+  .header h1 {
+    font-size: 20pt;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 3pt;
+  }
+  .header .tagline {
+    font-size: 10pt;
+    color: #555;
+    margin-bottom: 6pt;
+  }
+  .header .contact {
+    font-size: 8.5pt;
+    color: #666;
+    display: flex;
+    gap: 12pt;
+    flex-wrap: wrap;
+  }
+  .header .contact span::before {
+    content: '';
+    display: inline-block;
+    width: 3pt;
+    height: 3pt;
+    background: #999;
+    border-radius: 50%;
+    margin-right: 6pt;
+    vertical-align: middle;
+  }
+  .header .contact span:first-child::before { display: none; }
+
+  /* Sections */
+  .section { margin-bottom: 11pt; }
+  .section-title {
+    font-size: 7.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    border-bottom: 0.5pt solid #ddd;
+    padding-bottom: 3pt;
+    margin-bottom: 7pt;
+  }
+
+  /* Entries */
+  .entry { margin-bottom: 8pt; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1pt;
+  }
+  .entry-title {
+    font-weight: 600;
+    font-size: 10pt;
+  }
+  .entry-date {
+    font-size: 8.5pt;
+    color: #888;
+    white-space: nowrap;
+    margin-left: 8pt;
+  }
+  .entry-subtitle {
+    font-size: 9pt;
+    color: #555;
+    margin-bottom: 3pt;
+  }
+  .entry-body {
+    color: #333;
+  }
+  .entry-body ul {
+    list-style: none;
+    padding: 0;
+  }
+  .entry-body li {
+    padding-left: 10pt;
+    position: relative;
+    margin-bottom: 1.5pt;
+  }
+  .entry-body li::before {
+    content: '\2013';
+    position: absolute;
+    left: 0;
+    color: #aaa;
+  }
+  .entry-clients {
+    font-size: 8.5pt;
+    color: #777;
+    margin-top: 3pt;
+    font-style: italic;
+  }
+
+  /* Projects grid */
+  .projects { display: flex; flex-direction: column; gap: 7pt; }
+  .project { }
+  .project-name { font-weight: 600; font-size: 9.5pt; }
+  .project-desc { color: #333; margin-top: 1pt; }
+  .project-stack { font-size: 8pt; color: #888; margin-top: 2pt; }
+
+  /* Skills row */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6pt 20pt;
+  }
+  .skill-group-title {
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #999;
+    margin-bottom: 2pt;
+  }
+  .skill-group-body {
+    font-size: 9pt;
+    color: #333;
+  }
+
+  /* Education */
+  .edu-entry { margin-bottom: 4pt; }
+  .edu-entry:last-child { margin-bottom: 0; }
+
+  /* Awards */
+  .awards-list {
+    list-style: none;
+    padding: 0;
+    color: #333;
+  }
+  .awards-list li {
+    margin-bottom: 2pt;
+    padding-left: 10pt;
+    position: relative;
+  }
+  .awards-list li::before {
+    content: '\2013';
+    position: absolute;
+    left: 0;
+    color: #aaa;
+  }
+
+  /* Print */
+  @media print {
+    body { font-size: 9.5pt; }
+    .entry { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Katherine Moffat</h1>
+  <div class="tagline">Creative Technologist — AI Systems, Editorial, Brand Strategy</div>
+  <div class="contact">
+    <span>Canada</span>
+    <span>katherine@katherinemoffat.co</span>
+    <span>katherinemoffat.vercel.app</span>
+    <span>github.com/bitwitty</span>
+    <span>linkedin.com/in/moffatkatherine</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Profile</div>
+  <div class="entry-body">
+    Builder and generalist with 9+ years across editorial, brand strategy, content, photography, and marketing. In 2026, shipped five AI-powered products in three months: a travel directory, a marketing automation agent, a custom CRM, a podcast knowledge engine, and a portfolio with a live creative toolkit. Background in law, intelligence analysis, and editorial leadership. Builds end-to-end — from strategy to code to production.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Experience</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Dry Trip</span>
+      <span class="entry-date">Apr 2026 — Present</span>
+    </div>
+    <div class="entry-subtitle">Founder</div>
+    <div class="entry-body">
+      <ul>
+        <li>Built an AI-curated alcohol-free travel directory with 73 London venues, each individually audited and scored on a published rubric</li>
+        <li>Designed and implemented the full stack: automated venue discovery pipeline, AI trip planner (Claude), editorial CMS, and analytics</li>
+        <li>Next.js, Supabase, Claude API, Vercel AI SDK, Mapbox, Upstash Redis, PostHog</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">18th Grain</span>
+      <span class="entry-date">Apr 2026 — Present</span>
+    </div>
+    <div class="entry-subtitle">Co-Founder</div>
+    <div class="entry-body">
+      <ul>
+        <li>Co-founded a luxury golf course design studio producing custom handcrafted tee markers, plaques, and signage</li>
+        <li>Built a custom CRM that replaced the team's Notion setup and is used daily for client and order management</li>
+        <li>Next.js, Neon Postgres, Drizzle ORM, Auth.js, shadcn/ui</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Katherine Moffat Creative</span>
+      <span class="entry-date">Mar 2020 — Present</span>
+    </div>
+    <div class="entry-subtitle">Photographer</div>
+    <div class="entry-body">
+      <ul>
+        <li>Named one of Vogue Greece's New Talents 2025 in the Reportage category</li>
+        <li>Full-scale production, photography, and videography for global brands</li>
+        <li>Published in Vogue Greece, Vogue Portugal, Glamour Hungary, Matador Network</li>
+      </ul>
+      <div class="entry-clients">Clients: Expedia, Four Seasons, Fairmont, Tourism Whistler, Accor, The Italy Insider, RIXO, Billabong</div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Freelance</span>
+      <span class="entry-date">May 2017 — Present</span>
+    </div>
+    <div class="entry-subtitle">Writer, Editor, and Content Strategist</div>
+    <div class="entry-body">
+      <ul>
+        <li>Content strategy, SEO, and long-form editorial across luxury travel, health, tech, and wellness</li>
+        <li>Managed editorial calendars, analysed performance metrics, and collaborated with cross-functional teams</li>
+      </ul>
+      <div class="entry-clients">Clients: Expedia, The Italy Insider, Nolk Digital Agency, Loctote, Scribly Media</div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Top10Podcasts.com</span>
+      <span class="entry-date">Jun 2022 — Jun 2023</span>
+    </div>
+    <div class="entry-subtitle">Producer, Content Writer, and Project Manager</div>
+    <div class="entry-body">
+      <ul>
+        <li>Managed podcast production end-to-end from concept to launch, coordinating hosts, guests, and production teams</li>
+        <li>Developed partnership-driven content strategies that expanded audience reach and improved sponsor retention</li>
+        <li>Integrated GenAI into research workflows to accelerate production cycles</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Medicinal Roots Magazine</span>
+      <span class="entry-date">Jan 2018 — Aug 2022</span>
+    </div>
+    <div class="entry-subtitle">Associate Lead Editor</div>
+    <div class="entry-body">
+      <ul>
+        <li>Led editorial for a quarterly digital health publication over nearly 5 years</li>
+        <li>Authored articles, reviewed submissions, assigned writers, managed editorial calendars, and maintained brand voice</li>
+        <li>Translated complex research into accessible editorial content</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Sotheby's International Realty Canada</span>
+      <span class="entry-date">Nov 2014 — Jun 2016</span>
+    </div>
+    <div class="entry-subtitle">Marketing and Communications Manager</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">BAT</span>
+      <span class="entry-date">Sep 2010 — Sep 2011</span>
+    </div>
+    <div class="entry-subtitle">Anti-Illicit Trade Intelligence Analyst</div>
+    <div class="entry-body">
+      <ul>
+        <li>Cross-border threat analysis and investigative research supporting enforcement across Europe and the Middle East</li>
+        <li>Produced intelligence reports and briefings for the European Commission and Member States</li>
+        <li>Championed social media as an investigative tool — an early precursor to modern OSINT methods</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Projects</div>
+  <div class="projects">
+    <div class="project">
+      <span class="project-name">CMO Agent</span>
+      <div class="project-desc">AI marketing automation agent that runs weekly SEO passes across 3 brands. Pulls search data, scrapes competitors, generates article briefs via Claude, delivers to Notion for human review.</div>
+      <div class="project-stack">Python, Claude API, Google Search Console, GA4, Notion API, GitHub Actions</div>
+    </div>
+    <div class="project">
+      <span class="project-name">DOAC Knowledge Engine</span>
+      <div class="project-desc">Semantic search and AI synthesis across podcast transcripts using a 7-step RAG pipeline (prototype, 30 episodes indexed). From transcript ingestion to vector search to real-time synthesis with timestamped YouTube deep links.</div>
+      <div class="project-stack">Python, Voyage AI, Pinecone, Claude API, Flask</div>
+    </div>
+    <div class="project">
+      <span class="project-name">Creative Toolkit</span>
+      <div class="project-desc">Three live AI tools on the portfolio site: copy rewrite, brief-to-copy, and image prompt generator. Built on Claude and the Vercel AI SDK with rate limiting and structured output.</div>
+      <div class="project-stack">Next.js, TypeScript, Claude API, Vercel AI SDK</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Stack</div>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-group-title">Build</div>
+      <div class="skill-group-body">Next.js, React, TypeScript, Python, Flask</div>
+    </div>
+    <div>
+      <div class="skill-group-title">AI</div>
+      <div class="skill-group-body">Claude API, Vercel AI SDK, Voyage AI, Pinecone, Midjourney</div>
+    </div>
+    <div>
+      <div class="skill-group-title">Data</div>
+      <div class="skill-group-body">PostgreSQL, Supabase, Neon, Upstash Redis</div>
+    </div>
+    <div>
+      <div class="skill-group-title">Ops</div>
+      <div class="skill-group-body">GitHub Actions, Vercel, Railway, PostHog, GA4</div>
+    </div>
+    <div>
+      <div class="skill-group-title">Creative</div>
+      <div class="skill-group-body">Photography, Lightroom, Figma, Editorial Direction</div>
+    </div>
+    <div>
+      <div class="skill-group-title">Strategy</div>
+      <div class="skill-group-body">Content Strategy, SEO, Brand Voice, Marketing Automation</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Education & Recognition</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4pt 28pt;">
+    <div>
+      <div class="edu-entry">
+        <div class="entry-header">
+          <span class="entry-title">The University of Sheffield</span>
+          <span class="entry-date">2006 — 2009</span>
+        </div>
+        <div class="entry-subtitle">LLB (Honours), European, Comparative & International Law</div>
+      </div>
+      <div class="edu-entry">
+        <div class="entry-header">
+          <span class="entry-title">London School of Journalism</span>
+          <span class="entry-date">2024</span>
+        </div>
+        <div class="entry-subtitle">Freelance and Feature Writing</div>
+      </div>
+      <div class="edu-entry">
+        <div class="entry-header">
+          <span class="entry-title">The Modern Photography Academy</span>
+          <span class="entry-date">2021 — 2022</span>
+        </div>
+        <div class="entry-subtitle">Film Photography</div>
+      </div>
+    </div>
+    <div>
+      <ul class="awards-list">
+        <li>Vogue Greece New Talent 2025 — Reportage Category</li>
+        <li>Prize Winner, Write Away Hotel Essay Contest — Tablet Hotels</li>
+        <li>Sir William Perkins's Academic Scholarship</li>
+        <li>Duke of Edinburgh's Award</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

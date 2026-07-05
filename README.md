@@ -1,4 +1,4 @@
-# Kat Moffat. Creative Technologist.
+# Katherine Moffat — Creative Technologist
 
 Portfolio site with a live brand voice generator demo.
 
@@ -42,6 +42,3 @@ src/
   types/                  TypeScript interfaces
 ```
 
-## Content
-
-See `CONTENT-TODO.md` for all placeholder content that needs to be replaced before launch.

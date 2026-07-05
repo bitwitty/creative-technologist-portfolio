@@ -32,8 +32,7 @@ export default function Nav() {
           <span className="mark" aria-hidden="true"></span>
           <span className="name">Katherine Moffat</span>
         </Link>
-        {/* [PLACEHOLDER] Replace href with actual CV PDF path */}
-        <a className="nav__cv" href="/placeholder-cv.pdf" download>
+        <a className="nav__cv" href="/katherine-moffat-cv.pdf" download>
           Download CV <span className="ar" aria-hidden="true">{"\u2193"}</span>
         </a>
         <div className="nav__links">

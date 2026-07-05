@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Marquee from "@/components/Marquee";
 import RotatingBadge from "@/components/RotatingBadge";
 
@@ -42,10 +43,16 @@ export default function Home() {
             className="hero__portrait reveal"
             data-d="1"
             role="img"
-            aria-label="Professional photo placeholder"
+            aria-label="Katherine Moffat portrait"
           >
-            {/* [PLACEHOLDER] Replace with actual portrait image */}
-            <span className="ph-tag">portrait / drop image</span>
+            <Image
+              src="/katherine-portrait.png"
+              alt="Katherine Moffat holding a Contax film camera"
+              fill
+              sizes="(max-width: 640px) 100vw, 340px"
+              style={{ objectFit: "cover" }}
+              priority
+            />
             <div className="hero__badge">
               <RotatingBadge text="Currently open for offers" />
             </div>
