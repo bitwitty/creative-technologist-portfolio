@@ -37,12 +37,29 @@ export default function AboutPage() {
           Talent in 2025.
         </p>
         <p>
-          In the last three months I{"'"}ve shipped five products using AI: a
-          travel directory that scores 73 venues through automated research and
-          scoring with manual review, a marketing agent that generates SEO and
-          social drafts across three brands weekly, a CRM that replaced a
-          client{"'"}s Notion setup and is used daily, a podcast knowledge
-          engine, and this portfolio with a live creative toolkit. All on GitHub.
+          I{"'"}ve always been the person who picks up the new tool first. Not
+          out of novelty — I just think in systems, and I{"'"}m always looking
+          for a better one. That instinct used to mean learning a new CMS or
+          figuring out analytics. Now it means building the systems myself.
+        </p>
+        <p>
+          In the last three months I{"'"}ve shipped four products: an{" "}
+          <a href="/work">AI-curated travel directory</a>, a{" "}
+          <a href="/work">marketing automation agent</a>, a{" "}
+          <a href="/work">custom CRM</a>, and a{" "}
+          <a href="/work">semantic search engine over podcast transcripts</a>.
+          Plus this portfolio with a{" "}
+          <a href="/generator">live creative toolkit</a>. All on{" "}
+          <a href="https://github.com/bitwitty" target="_blank" rel="noopener">
+            GitHub
+          </a>.
+        </p>
+        <p>
+          The editorial background isn{"'"}t separate from the technical work —
+          it{"'"}s what makes it useful. I know what good output looks like. I
+          know when AI copy needs a human pass and when a pipeline is producing
+          something you{"'"}d actually publish. That judgment comes from a decade
+          of editing, not a weekend of prompting.
         </p>
       </div>
 
@@ -53,73 +70,6 @@ export default function AboutPage() {
           means I know what commercially usable output looks like, and I work in
           both.
         </p>
-      </div>
-
-      <div className="help__cols reveal" data-d="3">
-        <div className="collist">
-          <div className="collist__head">
-            <span className="label">Capabilities</span>
-            <span className="ix">What I do</span>
-          </div>
-          <ul>
-            <li>
-              <span>AI Pipeline Design</span>
-              <span className="meta">01</span>
-            </li>
-            <li>
-              <span>Rapid Prototyping</span>
-              <span className="meta">02</span>
-            </li>
-            <li>
-              <span>Creative Automation</span>
-              <span className="meta">03</span>
-            </li>
-            <li>
-              <span>Brand Voice Systems</span>
-              <span className="meta">04</span>
-            </li>
-            <li>
-              <span>Human-in-the-Loop Review</span>
-              <span className="meta">05</span>
-            </li>
-            <li>
-              <span>Photography / Editing</span>
-              <span className="meta">06</span>
-            </li>
-          </ul>
-        </div>
-        <div className="collist">
-          <div className="collist__head">
-            <span className="label">Toolkit</span>
-            <span className="ix">Stack</span>
-          </div>
-          <ul>
-            <li>
-              <span>Next.js / TypeScript</span>
-              <span className="meta">Build</span>
-            </li>
-            <li>
-              <span>Claude API / Vercel AI SDK</span>
-              <span className="meta">AI</span>
-            </li>
-            <li>
-              <span>Python / GitHub Actions</span>
-              <span className="meta">Agents</span>
-            </li>
-            <li>
-              <span>Postgres / Supabase / Neon</span>
-              <span className="meta">Data</span>
-            </li>
-            <li>
-              <span>PostHog / GA4 / Search Console</span>
-              <span className="meta">Signal</span>
-            </li>
-            <li>
-              <span>Figma / Lightroom</span>
-              <span className="meta">Craft</span>
-            </li>
-          </ul>
-        </div>
       </div>
 
       {/* AI Imagery */}

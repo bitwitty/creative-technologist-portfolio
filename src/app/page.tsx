@@ -60,7 +60,7 @@ export default function Home() {
           <div className="hero__copy reveal" data-d="2">
             <p>
               <span className="lead">
-                Five shipped products in three months.
+                Four systems built in three months.
               </span>{" "}
               A decade of creative production setting the quality bar.
             </p>
