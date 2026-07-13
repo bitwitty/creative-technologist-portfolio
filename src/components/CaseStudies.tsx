@@ -9,6 +9,7 @@ const CASES: CaseData[] = [
     no: "Work 01",
     name: "Dry Trip",
     sub: "AI-Curated Travel Directory",
+    url: "https://drytrip.co",
     problem:
       "Curating a luxury directory of alcohol-free travel experiences manually doesn't scale. Every venue needs discovery, verification, scoring, and editorial review before publishing.",
     system:
@@ -63,6 +64,7 @@ const CASES: CaseData[] = [
     no: "Work 03",
     name: "18th Grain",
     sub: "Custom CRM",
+    url: "https://18thgrain.com",
     problem:
       "A luxury golf company was running their sales pipeline, contacts, and financials across Notion pages. It worked until it didn't — no pipeline visibility, no inquiry capture, no real reporting.",
     system:

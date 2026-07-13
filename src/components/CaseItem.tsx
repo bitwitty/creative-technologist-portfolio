@@ -10,6 +10,7 @@ export interface CaseData {
   no: string;
   name: string;
   sub: string;
+  url?: string;
   problem: string;
   system: string;
   output: string;
@@ -42,6 +43,18 @@ export default function CaseItem({
           <span className="case__spacer" aria-hidden="true"></span>
           <div className="case__body">
             <div className="case__fields">
+              {c.url && (
+                <div>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ font: "400 0.72rem/1 var(--mono, monospace)", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "var(--accent)", borderBottom: "1px solid var(--accent)", paddingBottom: "0.15rem" }}
+                  >
+                    View live site {"\u2197"}
+                  </a>
+                </div>
+              )}
               <div>
                 <p className="field__label">Problem</p>
                 <p className="field__text dim">{c.problem}</p>
