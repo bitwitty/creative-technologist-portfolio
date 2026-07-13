@@ -2,6 +2,26 @@ import Link from "next/link";
 import Image from "next/image";
 import Marquee from "@/components/Marquee";
 import RotatingBadge from "@/components/RotatingBadge";
+import CaseStudies from "@/components/CaseStudies";
+
+const CAMPAIGN_IMAGES = [
+  {
+    src: "/campaigns/saltstone/saltstone-04.png",
+    alt: "Salt & Stone Lily & Yuzu duo on a stone ledge under a yuzu tree with rolling hills behind",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-01.png",
+    alt: "Woman in white walking through terraced yuzu groves toward a turquoise river valley",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-02.png",
+    alt: "Salt & Stone deodorant floating on a leaf in an onsen pool with lily and yuzu",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-03.png",
+    alt: "Salt & Stone duo on wet leaves and coastal rock with ocean waves",
+  },
+];
 
 export default function Home() {
   return (
@@ -65,7 +85,7 @@ export default function Home() {
               A decade of creative production setting the quality bar.
             </p>
             <div className="hero__ctas">
-              <Link className="btn-pill btn-pill--solid" href="/work">
+              <Link className="btn-pill btn-pill--solid" href="#work">
                 See the work{" "}
                 <span className="arrow" aria-hidden="true">
                   {"\u2197"}
@@ -92,78 +112,91 @@ export default function Home() {
         ]}
       />
 
-      {/* ---------- WORK PREVIEW ---------- */}
+      {/* ---------- CAMPAIGN IMAGERY ---------- */}
       <section className="wrap section">
         <div className="sec-kicker reveal">
           <span className="label label--muted">
-            <span className="star">{"\u2726"}</span>Recent work
+            <span className="star">{"\u2726"}</span>Creative Direction / Concept
+            Campaign
           </span>
           <span className="bar" aria-hidden="true"></span>
         </div>
         <div className="sec-head reveal" data-d="1">
-          <h2 className="display">What I{"'"}ve</h2>
+          <h2 className="display">Campaign</h2>
           <h2 className="display outline">
-            been building
+            imagery
             <span className="dot" style={{ WebkitTextStroke: 0 }}>
               .
             </span>
           </h2>
         </div>
 
-        <div className="reveal" data-d="2" style={{ marginTop: "clamp(1.5rem, 3vw, 2.5rem)" }}>
-          <Link href="/work">
-            <div style={{ position: "relative", width: "100%", aspectRatio: "8/11", overflow: "hidden" }}>
-              <Image
-                src="/campaigns/saltstone/saltstone-grid-01.png"
-                alt="Salt & Stone Lily & Yuzu concept campaign — 8-slide carousel showing product imagery, editorial direction, and branded copy"
-                fill
-                sizes="(max-width: 640px) 100vw, 80vw"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </Link>
-          <p
-            style={{
-              marginTop: "0.75rem",
-              font: "500 0.74rem/1.4 var(--sans)",
-              color: "var(--muted)",
-            }}
-          >
-            Salt &amp; Stone / Lily &amp; Yuzu concept campaign — AI-generated imagery
+        <div className="help__prose reveal" data-d="2">
+          <p>
+            Speculative campaign for Salt &amp; Stone{"'"}s Lily &amp; Yuzu
+            Signature Scent Duo. The concept traces the ingredients to their
+            origin — yuzu orchards in Japan{"'"}s mountain valleys and wild
+            lilies on coastal dunes. Four images, one session, from brief
+            through art direction to final output.
           </p>
         </div>
 
-        <div className="reveal" data-d="3" style={{ marginTop: "clamp(2rem, 4vw, 3rem)" }}>
-          <div className="collist">
-            <div className="collist__head">
-              <span className="label">Systems</span>
-              <span className="ix">
-                <Link href="/work" style={{ color: "var(--accent)" }}>
-                  View all{" \u2197"}
-                </Link>
-              </span>
+        <div
+          className="reveal"
+          data-d="3"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 300px), 1fr))",
+            gap: "clamp(0.5rem, 1.5vw, 1rem)",
+            marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
+          }}
+        >
+          {CAMPAIGN_IMAGES.map((img) => (
+            <div
+              key={img.src}
+              style={{
+                position: "relative",
+                aspectRatio: "4/5",
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
+                style={{ objectFit: "cover" }}
+              />
             </div>
-            <ul>
-              <li>
-                <span>Dry Trip — AI-curated travel directory</span>
-                <span className="meta">01</span>
-              </li>
-              <li>
-                <span>CMO Agent — Multi-brand marketing automation</span>
-                <span className="meta">02</span>
-              </li>
-              <li>
-                <span>18th Grain — Custom CRM, built in a weekend</span>
-                <span className="meta">03</span>
-              </li>
-              <li>
-                <span>DOAC Knowledge Engine — Semantic search over podcasts</span>
-                <span className="meta">04</span>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
+
+        <p
+          style={{
+            marginTop: "1rem",
+            font: "500 0.74rem/1.4 var(--sans)",
+            color: "var(--muted)",
+          }}
+        >
+          AI-generated imagery / Concept campaign, not client work
+        </p>
       </section>
+
+      {/* ---------- CASE STUDIES ---------- */}
+      <CaseStudies />
+
+      <Marquee
+        reverse
+        items={[
+          "Next.js",
+          "Claude API",
+          "Python",
+          "Supabase",
+          "TypeScript",
+          "GitHub Actions",
+          "Postgres",
+        ]}
+      />
 
       {/* ---------- CAPABILITIES ---------- */}
       <section className="wrap section">
