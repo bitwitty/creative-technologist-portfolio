@@ -75,9 +75,9 @@ export default function Home() {
           </div>
           <div className="hero__copy reveal" data-d="2">
             <p>
-              Campaign imagery no camera has ever seen. AI pipelines,
-              automated production workflows, and creative direction —
-              with editorial taste baked in.
+              I build the systems between the brief and the finished
+              asset. AI pipelines, automated production workflows, and
+              creative direction — with editorial taste baked in.
             </p>
             <div className="hero__ctas">
               <Link className="btn-pill btn-pill--solid" href="#work">
