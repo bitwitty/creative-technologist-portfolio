@@ -27,10 +27,10 @@ export default function Nav() {
         <Link
           href="/"
           className="nav__brand"
-          aria-label="Katherine Moffat, home"
+          aria-label="House of Atelios, home"
         >
-          <span className="mark" aria-hidden="true"></span>
-          <span className="name">Katherine Moffat</span>
+          <span className="mark" aria-hidden="true">hA</span>
+          <span className="name">House of Atelios</span>
         </Link>
         <a className="nav__cv" href="/katherine-moffat-cv.pdf" download>
           Download CV <span className="ar" aria-hidden="true">{"\u2193"}</span>

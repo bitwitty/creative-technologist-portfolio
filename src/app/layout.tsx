@@ -1,29 +1,15 @@
 import type { Metadata } from "next";
-import { Archivo, Archivo_Black } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const archivoBlack = Archivo_Black({
-  variable: "--font-archivo-black",
-  subsets: ["latin"],
-  weight: "400",
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "Katherine Moffat. Creative Technologist.",
-    template: "%s | Katherine Moffat",
+    default: "House of Atelios — AI Creative Production Studio",
+    template: "%s | House of Atelios",
   },
   description:
-    "Katherine Moffat. Creative technologist building AI pipelines, production workflows, and tools for creative teams.",
+    "House of Atelios. AI creative production studio founded by Katherine Moffat. Campaign imagery, creative direction, and automated pipelines.",
 };
 
 export default function RootLayout({
@@ -34,7 +20,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${archivoBlack.variable}`}
     >
       <body>
         <a href="#main" className="skip-link">Skip to content</a>

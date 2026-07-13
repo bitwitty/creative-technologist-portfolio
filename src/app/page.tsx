@@ -30,27 +30,23 @@ export default function Home() {
       <header className="wrap hero" id="main">
         <div className="hero__top reveal">
           <span className="label">
-            <span className="star">{"\u2726"}</span>Creative Technologist
+            <span className="star">{"\u2726"}</span>AI Creative Production Studio
           </span>
           <div className="hero__meta label label--muted">
             <span className="live" style={{ color: "var(--ink)" }}>
-              Available 2026
+              Available for projects
             </span>
-            <span>Independent practice</span>
-            <span>AI / Automation / Tooling</span>
+            <span>AI · Automation · Tooling</span>
           </div>
         </div>
 
         <div className="hero__display reveal" data-d="1">
           <div className="hero__line">
-            <span className="hero__tag">
-              AI<span className="slash">/</span>Systems
-            </span>
-            <h1 className="hero__huge">Creative</h1>
+            <h1 className="hero__huge">House of</h1>
           </div>
           <div className="hero__line">
-            <span className="hero__huge outline">
-              Technologist
+            <span className="hero__huge" style={{ color: "var(--forest)" }}>
+              Atelios
               <span className="dot" style={{ WebkitTextStroke: 0 }}>
                 .
               </span>
@@ -74,15 +70,14 @@ export default function Home() {
               priority
             />
             <div className="hero__badge">
-              <RotatingBadge text="Currently open for offers" />
+              <RotatingBadge text="Available for projects · 2026 ·" />
             </div>
           </div>
           <div className="hero__copy reveal" data-d="2">
             <p>
-              <span className="lead">
-                Four systems built in three months.
-              </span>{" "}
-              A decade of creative production setting the quality bar.
+              Campaign imagery no camera has ever seen. AI pipelines,
+              automated production workflows, and creative direction —
+              with editorial taste baked in.
             </p>
             <div className="hero__ctas">
               <Link className="btn-pill btn-pill--solid" href="#work">

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected projects by Katherine Moffat. AI pipelines, creative automation, and production tools.",
+    "Selected projects by House of Atelios. AI pipelines, creative automation, and production tools.",
 };
 
 export default function WorkLayout({

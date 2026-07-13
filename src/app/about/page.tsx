@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Katherine Moffat. Creative technologist building AI systems for creative teams.",
+    "House of Atelios. AI creative production studio founded by Katherine Moffat.",
 };
 
 export default function AboutPage() {

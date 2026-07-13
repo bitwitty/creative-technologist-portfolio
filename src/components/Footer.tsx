@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <div className="wrap">
         <div className="rule-badge">
-          <RotatingBadge reverse text="Available for projects" size={104} />
+          <RotatingBadge reverse text="Available for projects · 2026 ·" size={104} />
         </div>
       </div>
 
@@ -18,9 +18,9 @@ export default function Footer() {
           <span className="bar" aria-hidden="true"></span>
         </div>
         <div className="contact__display">
-          <span className="display">Contact</span>
+          <span className="display">Get in</span>
           <span className="display outline">
-            Me<span className="dot" style={{ WebkitTextStroke: 0 }}>.</span>
+            touch<span className="dot" style={{ WebkitTextStroke: 0 }}>.</span>
           </span>
         </div>
         <div className="contact__cols">
@@ -74,9 +74,9 @@ export default function Footer() {
 
       <footer className="footer-bottom">
         <div className="wrap footer-bottom__inner">
-          <span>&copy; 2026 Katherine Moffat</span>
-          <span>Creative Technologist / Photographer / Editor</span>
-          <span>Built as a system, not a template</span>
+          <span>&copy; 2026 House of Atelios</span>
+          <span>Founded by Katherine Moffat</span>
+          <span>Campaign imagery no camera has ever seen</span>
         </div>
       </footer>
     </>
