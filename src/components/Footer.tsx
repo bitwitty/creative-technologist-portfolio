@@ -57,8 +57,8 @@ export default function Footer() {
             </div>
             <ul>
               <li>
-                <a href="mailto:katherine@katherinemoffat.co">
-                  katherine@katherinemoffat.co
+                <a href="mailto:houseofatelios@gmail.com">
+                  houseofatelios@gmail.com
                 </a>
               </li>
               <li>
