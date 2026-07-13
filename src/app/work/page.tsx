@@ -226,34 +226,6 @@ export default function WorkPage() {
       <div className="wrap section" id="main">
         <div className="sec-kicker reveal">
           <span className="label label--muted">
-            <span className="star">{"\u2726"}</span>Selected Work / 04 systems
-          </span>
-          <span className="bar" aria-hidden="true"></span>
-        </div>
-        <div className="sec-head reveal" data-d="1">
-          <h2 className="display">Systems I</h2>
-          <h2 className="display outline">
-            have built
-            <span className="dot" style={{ WebkitTextStroke: 0 }}>
-              .
-            </span>
-          </h2>
-        </div>
-        <div className="cases">
-          {CASES.map((c) => (
-            <CaseItem
-              key={c.no}
-              c={c}
-              open={open === c.no}
-              onToggle={() => setOpen(open === c.no ? null : c.no)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="wrap section">
-        <div className="sec-kicker reveal">
-          <span className="label label--muted">
             <span className="star">{"\u2726"}</span>Creative Direction / Concept
             Campaign
           </span>
@@ -316,9 +288,36 @@ export default function WorkPage() {
             color: "var(--muted)",
           }}
         >
-          AI-generated imagery using Higgsfield / Concept campaign, not client
-          work
+          AI-generated imagery / Concept campaign, not client work
         </p>
+      </div>
+
+      <div className="wrap section">
+        <div className="sec-kicker reveal">
+          <span className="label label--muted">
+            <span className="star">{"\u2726"}</span>Selected Work / 04 systems
+          </span>
+          <span className="bar" aria-hidden="true"></span>
+        </div>
+        <div className="sec-head reveal" data-d="1">
+          <h2 className="display">Systems I</h2>
+          <h2 className="display outline">
+            have built
+            <span className="dot" style={{ WebkitTextStroke: 0 }}>
+              .
+            </span>
+          </h2>
+        </div>
+        <div className="cases">
+          {CASES.map((c) => (
+            <CaseItem
+              key={c.no}
+              c={c}
+              open={open === c.no}
+              onToggle={() => setOpen(open === c.no ? null : c.no)}
+            />
+          ))}
+        </div>
       </div>
 
       <Marquee
