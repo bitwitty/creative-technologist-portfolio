@@ -1,7 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Marquee from "@/components/Marquee";
+
+const CAMPAIGN_IMAGES = [
+  {
+    src: "/campaigns/saltstone/saltstone-04.png",
+    alt: "Salt & Stone Lily & Yuzu duo on a stone ledge under a yuzu tree with rolling hills behind",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-01.png",
+    alt: "Woman in white walking through terraced yuzu groves toward a turquoise river valley",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-02.png",
+    alt: "Salt & Stone deodorant floating on a leaf in an onsen pool with lily and yuzu",
+  },
+  {
+    src: "/campaigns/saltstone/saltstone-03.png",
+    alt: "Salt & Stone duo on wet leaves and coastal rock with ocean waves",
+  },
+];
 
 const CASES = [
   {
@@ -229,6 +249,76 @@ export default function WorkPage() {
             />
           ))}
         </div>
+      </div>
+
+      <div className="wrap section">
+        <div className="sec-kicker reveal">
+          <span className="label label--muted">
+            <span className="star">{"\u2726"}</span>Creative Direction / Concept
+            Campaign
+          </span>
+          <span className="bar" aria-hidden="true"></span>
+        </div>
+        <div className="sec-head reveal" data-d="1">
+          <h2 className="display">Campaign</h2>
+          <h2 className="display outline">
+            imagery
+            <span className="dot" style={{ WebkitTextStroke: 0 }}>
+              .
+            </span>
+          </h2>
+        </div>
+
+        <div className="help__prose reveal" data-d="2">
+          <p>
+            Speculative campaign for Salt &amp; Stone{"'"}s Lily &amp; Yuzu
+            Signature Scent Duo. The concept traces the ingredients to their
+            origin — yuzu orchards in Japan{"'"}s mountain valleys and wild
+            lilies on coastal dunes. Four images, one session, from brief
+            through art direction to final output.
+          </p>
+        </div>
+
+        <div
+          className="reveal"
+          data-d="3"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 300px), 1fr))",
+            gap: "clamp(0.5rem, 1.5vw, 1rem)",
+            marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
+          }}
+        >
+          {CAMPAIGN_IMAGES.map((img) => (
+            <div
+              key={img.src}
+              style={{
+                position: "relative",
+                aspectRatio: "4/5",
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          ))}
+        </div>
+
+        <p
+          style={{
+            marginTop: "1rem",
+            font: "500 0.74rem/1.4 var(--sans)",
+            color: "var(--muted)",
+          }}
+        >
+          AI-generated imagery using Higgsfield / Concept campaign, not client
+          work
+        </p>
       </div>
 
       <Marquee
