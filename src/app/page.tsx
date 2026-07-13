@@ -171,6 +171,26 @@ export default function Home() {
           ))}
         </div>
 
+        <div
+          className="reveal"
+          data-d="4"
+          style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "8/11",
+            overflow: "hidden",
+            marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
+          }}
+        >
+          <Image
+            src="/campaigns/saltstone/saltstone-grid-01.png"
+            alt="Salt & Stone Lily & Yuzu full campaign layout — 8 slides showing product imagery, editorial direction, and branded copy"
+            fill
+            sizes="(max-width: 640px) 100vw, 80vw"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+
         <p
           style={{
             marginTop: "1rem",
