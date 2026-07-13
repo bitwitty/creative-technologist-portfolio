@@ -29,26 +29,26 @@ export default function AboutPage() {
 
       <div className="help__prose reveal" data-d="2">
         <p>
-          <span className="lead-in">For the last nine years</span> I{"'"}ve
-          been a writer, editor, content strategist, and photographer. I{"'"}ve
-          freelanced for Expedia and Four Seasons, handled marketing for
-          Sotheby{"'"}s International Realty, ran editorial for a health
-          publication for nearly five years, and was named a Vogue Greece New
-          Talent in 2025.
+          <span className="lead-in">House of Atelios</span> is the independent
+          practice of Katherine Moffat — a photographer, editor, and creative
+          technologist with a decade of production experience across luxury
+          travel, editorial, and brand work. Clients and publications include
+          Expedia, Four Seasons, Sotheby{"'"}s International Realty, and Vogue
+          Greece (New Talent 2025, Reportage).
         </p>
         <p>
-          I{"'"}ve always been the person who picks up the new tool first. Not
-          out of novelty — I just think in systems, and I{"'"}m always looking
-          for a better one. That instinct used to mean learning a new CMS or
-          figuring out analytics. Now it means building the systems myself.
+          The practice builds AI-powered creative production systems: pipelines
+          that generate, score, and deliver campaign assets with editorial
+          judgment built in. Not one-off prompts — repeatable infrastructure
+          that creative teams can rely on.
         </p>
         <p>
-          In the last three months I{"'"}ve shipped four products: an{" "}
-          <a href="/work">AI-curated travel directory</a>, a{" "}
-          <a href="/work">marketing automation agent</a>, a{" "}
-          <a href="/work">custom CRM</a>, and a{" "}
-          <a href="/work">semantic search engine over podcast transcripts</a>.
-          Plus this portfolio with a{" "}
+          Recent work includes an{" "}
+          <a href="/#work">AI-curated travel directory</a>, a{" "}
+          <a href="/#work">marketing automation agent</a>, a{" "}
+          <a href="/#work">custom CRM</a>, and a{" "}
+          <a href="/#work">semantic search engine over podcast transcripts</a>.
+          Plus a{" "}
           <a href="/generator">live creative toolkit</a>. All on{" "}
           <a href="https://github.com/bitwitty" target="_blank" rel="noopener">
             GitHub
@@ -56,8 +56,8 @@ export default function AboutPage() {
         </p>
         <p>
           The editorial background isn{"'"}t separate from the technical work —
-          it{"'"}s what makes it useful. I know what good output looks like. I
-          know when AI copy needs a human pass and when a pipeline is producing
+          it{"'"}s what makes it useful. Knowing what good output looks like,
+          when AI copy needs a human pass, and when a pipeline is producing
           something you{"'"}d actually publish. That judgment comes from a decade
           of editing, not a weekend of prompting.
         </p>

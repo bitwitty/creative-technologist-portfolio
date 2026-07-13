@@ -30,13 +30,13 @@ export default function Home() {
       <header className="wrap hero" id="main">
         <div className="hero__top reveal">
           <span className="label">
-            <span className="star">{"\u2726"}</span>AI Creative Production Studio
+            <span className="star">{"\u2726"}</span>AI Creative Production
           </span>
           <div className="hero__meta label label--muted">
             <span className="live" style={{ color: "var(--ink)" }}>
-              Available for projects
+              Available 2026
             </span>
-            <span>AI · Automation · Tooling</span>
+            <span>Imagery · Pipelines · Creative Direction</span>
           </div>
         </div>
 
@@ -59,11 +59,11 @@ export default function Home() {
             className="hero__portrait reveal"
             data-d="1"
             role="img"
-            aria-label="Katherine Moffat portrait"
+            aria-label="Salt & Stone campaign imagery"
           >
             <Image
-              src="/katherine-portrait.png"
-              alt="Katherine Moffat holding a Contax film camera"
+              src="/campaigns/saltstone/saltstone-03.png"
+              alt="Salt & Stone Lily & Yuzu duo on coastal rock with ocean waves — AI-generated campaign imagery"
               fill
               sizes="(max-width: 640px) 100vw, 340px"
               style={{ objectFit: "cover" }}
