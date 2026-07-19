@@ -6,10 +6,6 @@ import CaseStudies from "@/components/CaseStudies";
 
 const CAMPAIGN_IMAGES = [
   {
-    src: "/campaigns/saltstone/saltstone-04.png",
-    alt: "Salt & Stone Lily & Yuzu duo on a stone ledge under a yuzu tree with rolling hills behind",
-  },
-  {
     src: "/campaigns/saltstone/saltstone-01.png",
     alt: "Woman in white walking through terraced yuzu groves toward a turquoise river valley",
   },
