@@ -90,6 +90,7 @@ const CASES: CaseData[] = [
     no: "Work 04",
     name: "DOAC Knowledge Engine",
     sub: "Semantic Search Over Podcast Transcripts",
+    url: "https://web-production-7bade.up.railway.app/",
     problem:
       "The Diary of a CEO has 815+ episodes. Finding a specific expert insight means scrubbing through hours of video. There's no way to search what was actually said.",
     system:
